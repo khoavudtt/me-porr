@@ -1,0 +1,19 @@
+<%@page import="com.liferay.portal.kernel.dao.orm.QueryUtil"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.HoGiaDinhBussiness"%>
+<%@page import="vn.dtt.sol.ns.reporting.HoGiaDinhReportModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.service.DauNoiNuocLocalServiceUtil"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="vn.dtt.sol.ns.reporting.DauNoiNuocReportModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.model.DauNoiNuoc"%>
+<%@page import="org.apache.commons.beanutils.BeanComparator"%>
+<%@page import="vn.dtt.sol.ns.tramcap.business.DauNoiNuocBusiness"%>
+<%
+
+List<HoGiaDinhReportModel> resultBase = new ArrayList<HoGiaDinhReportModel>(
+		HoGiaDinhBussiness.getListHoGiaDinhByTypeUser(userMapping, maTinh, maHuyen, maXa, "", trangThai, namBaoCao,namBaoCaoVstx,ngayDauNoi,idNguoiTao,advText, searchContainer.getStart(), searchContainer.getEnd()));
+results = resultBase;
+total = HoGiaDinhBussiness.countHoGiaDinhByTypeUser(userMapping, maTinh, maHuyen, maXa, "", trangThai, namBaoCao,namBaoCaoVstx,ngayDauNoi,idNguoiTao,advText, QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

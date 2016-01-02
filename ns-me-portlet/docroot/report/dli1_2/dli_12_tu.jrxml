@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dli_12_tu" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ee10d8f-3545-4b19-8fe5-9e497a7fb4b1">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.xls.sheet.names.sheet1" value="DLI 1.2 TW"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\DEV\\liferay-plugins-sdk-6.2.0\\portlets\\ns-me-portlet\\docroot\\report\\dli1_2\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="lstSoNhaTieuXayMoiHVSTinh" class="java.util.List">
+		<fieldDescription><![CDATA[lstSoNhaTieuXayMoiHVSTinh]]></fieldDescription>
+	</field>
+	<field name="lstSoNhaTieuXayMoiHVSToanTinh" class="java.util.List">
+		<fieldDescription><![CDATA[lstSoNhaTieuXayMoiHVSToanTinh]]></fieldDescription>
+	</field>
+	<field name="nam" class="java.lang.String">
+		<fieldDescription><![CDATA[nam]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="40" width="555" height="20" uuid="8a3d366c-54f8-4d0f-893f-02ade868303c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(SỐ NHÀ TIÊU HỘ GIA ĐÌNH HVS XÂY MỚI "+(($F{nam} != null && $F{nam}.trim().length() > 0) ?"NĂM "+ $F{nam} : "")+"-CHỈ SỐ DLI 1.2)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="20" width="555" height="20" uuid="28555de0-05e8-4522-ad62-9da316d135ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["KẾT QUẢ THỰC HIỆN HỢP PHẦN VỆ SINH"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="81bc7b05-bd7b-425c-871d-21ec64b15844"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lstSoNhaTieuXayMoiHVSToanTinh})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "dli_12_tu_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="01f61dae-fd2b-4808-a417-a333b5dae2d3"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lstSoNhaTieuXayMoiHVSTinh})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "dli_12_tu_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

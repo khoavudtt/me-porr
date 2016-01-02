@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="count.mau.ngau.nhien.admin">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_maukiemdem 
+		]]>
+	</sql>
+
+	<sql id="count.mau.ngau.nhien.tu">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_maukiemdem 
+		]]>
+	</sql>
+
+	<sql id="count.mau.ngau.nhien.tinh">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_maukiemdem WHERE me_maukiemdem.MATINH = ? 
+		]]>
+	</sql>
+
+	<sql id="count.mau.ngau.nhien.huyen">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_maukiemdem WHERE me_maukiemdem.MATINH = ? 
+		]]>
+	</sql>
+
+
+	<sql id="count.danh.gia.ve.sinh.admin">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_danhgiavesinhxa
+		]]>
+	</sql>
+
+	<sql id="count.danh.gia.ve.sinh.tu">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_danhgiavesinhxa
+		]]>
+	</sql>
+
+	<sql id="count.danh.gia.ve.sinh.tinh">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_danhgiavesinhxa WHERE MATINH = ?
+		]]>
+	</sql>
+
+	<sql id="count.danh.gia.ve.sinh.huyen">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_danhgiavesinhxa WHERE MATINH = ?
+		]]>
+	</sql>
+
+
+	<sql id="count.ke.hoach.ve.sinh.admin">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_kehoachvesinhxa
+		]]>
+	</sql>
+
+	<sql id="count.ke.hoach.ve.sinh.tu">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_kehoachvesinhxa
+		]]>
+	</sql>
+
+	<sql id="count.ke.hoach.ve.sinh.tinh">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_kehoachvesinhxa WHERE MATINH = ?		
+		]]>
+	</sql>
+	<sql id="count.ke.hoach.ve.sinh.huyen">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_kehoachvesinhxa WHERE MATINH = ?		
+		]]>
+	</sql>
+
+
+	<sql id="count.kiem.dem.ve.sinh.admin">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kehoachkiemdemvesinh
+		]]>
+	</sql>
+
+
+	<sql id="count.kiem.dem.ve.sinh.tu">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kehoachkiemdemvesinh
+			WHERE
+				me_kehoachkiemdemvesinh.matinh IN (
+					SELECT
+						me_diabanqly_tu.maTinh
+					FROM
+						me_diabanqly_tu
+					WHERE
+						me_diabanqly_tu.userId = ?
+				)
+		]]>
+	</sql>
+
+	
+	<sql id="count.kiem.dem.ve.sinh.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kehoachkiemdemvesinh
+			WHERE
+				me_kehoachkiemdemvesinh.mahuyen IN (
+					SELECT
+						me_diabanqly_tinh.maHuyen
+					FROM
+						me_diabanqly_tinh
+					WHERE
+						me_diabanqly_tinh.userId = ?
+				)		
+		]]>
+	</sql>
+
+
+	<sql id="count.kiem.dem.ve.sinh.huyen">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kehoachkiemdemvesinh
+			WHERE
+				me_kehoachkiemdemvesinh.kiemdemvienid IN (
+					SELECT
+						me_kiemdemvien.ID
+					FROM
+						me_kiemdemvien
+					WHERE
+						me_kiemdemvien.idQuanLy = ?
+				)		
+		]]>
+	</sql>
+
+
+	<sql id="count.ve.sinh.cong.trinh.admin">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhcongtrinh
+		]]>
+	</sql>
+
+	<sql id="count.ve.sinh.cong.trinh.tu">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhcongtrinh
+			WHERE
+				me_vesinhcongtrinh.matinh IN (
+					SELECT
+						me_diabanqly_tu.maTinh
+					FROM
+						me_diabanqly_tu
+					WHERE
+						userId = ?
+				)
+		]]>
+	</sql>
+
+	<sql id="count.ve.sinh.cong.trinh.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhcongtrinh
+			WHERE
+				me_vesinhcongtrinh.matinh = ? AND
+				me_vesinhcongtrinh.mahuyen IN (
+					SELECT
+						me_diabanqly_tinh.mahuyen
+					FROM
+						me_diabanqly_tinh
+					WHERE
+						userId = ?
+				)
+		]]>
+	</sql>
+
+	<sql id="count.ve.sinh.cong.trinh.huyen">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhcongtrinh
+			WHERE
+				me_vesinhcongtrinh.matinh = ? AND
+				me_vesinhcongtrinh.maxa IN (
+					SELECT
+						me_diabanqly_huyen.maXa
+					FROM
+						me_diabanqly_huyen
+					WHERE
+						me_diabanqly_huyen.userId = ?
+				)
+		]]>
+	</sql>
+
+
+	<sql id="count.ve.sinh.gia.dinh.admin">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_vesinhgiadinh
+		]]>
+	</sql>
+	
+	<sql id="count.ve.sinh.gia.dinh.tu">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhgiadinh
+			WHERE
+				me_vesinhgiadinh.matinh IN (
+					SELECT
+						me_diabanqly_tu.maTinh
+					FROM
+						me_diabanqly_tu
+					WHERE
+						me_diabanqly_tu.userId = ?
+				)
+		]]>
+	</sql>
+	
+	<sql id="count.ve.sinh.gia.dinh.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhgiadinh
+			WHERE
+				maTinh = ? AND
+				me_vesinhgiadinh.mahuyen IN (
+					SELECT
+						me_diabanqly_tinh.maHuyen
+					FROM
+						me_diabanqly_tinh
+					WHERE
+						me_diabanqly_tinh.userId = ?
+				)		
+		]]>
+	</sql>
+	
+	<sql id="count.ve.sinh.gia.dinh.huyen">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhgiadinh
+			WHERE
+				me_vesinhgiadinh.matinh = ?
+			AND me_vesinhgiadinh.maxa IN (
+				SELECT
+					me_diabanqly_huyen.maXa
+				FROM
+					me_diabanqly_huyen
+				WHERE
+					me_diabanqly_huyen.userId = ?
+			)
+		]]>
+	</sql>
+
+
+
+
+
+
+
+
+
+	<sql id="count.cong.trinh.cap.nuoc.admin">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_tramcapnuoc
+		]]>
+	</sql>
+	<sql id="count.cong.trinh.cap.nuoc.tu">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_tramcapnuoc
+			WHERE
+				me_tramcapnuoc.MATINH IN (
+					SELECT
+						me_diabanqly_tu.maTinh
+					FROM
+						me_diabanqly_tu
+					WHERE
+						USERID = ?
+				)
+		]]>
+	</sql>
+	
+	<sql id="count.cong.trinh.cap.nuoc.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_tramcapnuoc
+			WHERE
+				me_tramcapnuoc.MATINH = ? AND
+				me_tramcapnuoc.MAHUYEN IN (
+					SELECT
+						me_diabanqly_tinh.maHuyen
+					FROM
+						me_diabanqly_tinh
+					WHERE
+						USERID = ?
+				)
+		]]>
+	</sql>
+	
+	<sql id="count.cong.trinh.cap.nuoc.tramcap">
+		<![CDATA[
+			SELECT
+				COUNT(
+					DISTINCT me_diabanqly_tramcap.maTramCap
+				) AS COUNT_VALUE
+			FROM
+				me_diabanqly_tramcap
+			WHERE
+				me_diabanqly_tramcap.userId = ?
+		]]>
+	</sql>
+	
+	<sql id="count.dau.noi.nuoc.admin">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_daunoinuoc
+		]]>
+	</sql>
+
+	<sql id="count.dau.noi.nuoc.tu">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_daunoinuoc
+			WHERE 
+				me_daunoinuoc.MATINH IN (SELECT me_diabanqly_tu.maTinh FROM me_diabanqly_tu WHERE me_diabanqly_tu.userId = ?)
+		]]>
+	</sql>
+	
+	<sql id="count.dau.noi.nuoc.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_daunoinuoc
+			WHERE 
+				me_daunoinuoc.MATINH = ?
+		]]>
+	</sql>
+	
+	<sql id="count.dau.noi.nuoc.tramcap">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_daunoinuoc
+			WHERE
+				me_daunoinuoc.MATINH = ? AND
+				me_daunoinuoc.TRAMCAPNUOCID IN (
+					SELECT
+						me_diabanqly_tramcap.maTramCap
+					FROM
+						me_diabanqly_tramcap
+					WHERE
+						me_diabanqly_tramcap.userId = ?
+				)
+		]]>
+	</sql>
+	
+	<sql id="count.ke.hoach.dau.noi.admin">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_kehoachkiemdemnuoc
+ 		]]>
+	</sql>
+	
+	<sql id="count.ke.hoach.dau.noi.tu">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_kehoachkiemdemnuoc
+ 		]]>
+	</sql>
+
+	<sql id="count.ke.hoach.dau.noi.tinh">
+		<![CDATA[
+			SELECT 	COUNT(*) AS COUNT_VALUE
+			
+			FROM
+				me_kehoachkiemdemnuoc
+			WHERE
+				me_kehoachkiemdemnuoc.tramcapnuocid IN (
+					SELECT
+						me_tramcapnuoc.id
+					FROM
+						me_tramcapnuoc
+					WHERE
+						me_tramcapnuoc.MATINH = ?
+				)
+	 	]]>
+	</sql>
+	
+	<sql id="count.ke.hoach.dau.noi.tramcap">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE
+			
+			FROM
+				me_kehoachkiemdemnuoc
+			WHERE
+				me_kehoachkiemdemnuoc.tramcapnuocid IN (
+					SELECT
+						me_diabanqly_tramcap.maTramCap
+					FROM
+						me_diabanqly_tramcap
+					WHERE
+						me_diabanqly_tramcap.userId = ?
+					GROUP BY maTramCap
+				)
+ 		]]>
+	</sql>
+	
+	<sql id="count.danh.gia.cuoi.nam.admin">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_danhgiabenvung
+ 		]]>
+	</sql>
+	
+	<sql id="count.danh.gia.cuoi.nam.tu">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_danhgiabenvung
+ 		]]>
+	</sql>
+	
+	<sql id="count.danh.gia.cuoi.nam.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_danhgiabenvung
+			WHERE me_danhgiabenvung.TRAMCAPNUOCID IN (SELECT me_tramcapnuoc.ID FROM me_tramcapnuoc WHERE me_tramcapnuoc.MATINH = ?)
+ 		]]>
+	</sql>
+	
+	<sql id="count.danh.gia.cuoi.nam.tramcap">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_danhgiabenvung
+			WHERE me_danhgiabenvung.TRAMCAPNUOCID IN (SELECT me_tramcapnuoc.ID FROM me_tramcapnuoc WHERE me_tramcapnuoc.MATINH = ?)
+ 		]]>
+	</sql>
+	
+	<sql id="count.ke.hoach.dau.nam.admin">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_kehoachnuocsach
+		]]>
+	</sql>
+	
+	<sql id="count.ke.hoach.dau.nam.tu">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_kehoachnuocsach
+ 		]]>
+	</sql>
+	
+	<sql id="count.ke.hoach.dau.nam.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kehoachnuocsach
+			WHERE
+				me_kehoachnuocsach.TRAMCAPNUOCID IN (
+					SELECT
+						me_tramcapnuoc.ID
+					FROM
+						me_tramcapnuoc
+					WHERE
+						me_tramcapnuoc.MATINH = ?
+				)
+		]]>
+	</sql>
+	
+	<sql id="count.ke.hoach.dau.nam.tramcap">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kehoachnuocsach
+			WHERE
+				me_kehoachnuocsach.TRAMCAPNUOCID IN (
+					SELECT me_diabanqly_tramcap.maTramCap FROM me_diabanqly_tramcap WHERE me_diabanqly_tramcap.userId = ?
+			
+				)
+		]]>
+	</sql>
+	
+</custom-sql>

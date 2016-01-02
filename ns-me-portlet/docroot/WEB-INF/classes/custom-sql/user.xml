@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.cmon.user.dao.service.persistence.UserMappingFinder.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_usermapping as a1
+			WHERE
+				(lower(a1.name) LIKE ? [$AND_OR_NULL_CHECK$])
+				AND (a1.USERTYPE = ?)
+				AND (a1.ORGCODE1 = ?)
+				AND (a1.ORGCODE2 = ?)
+			ORDER BY
+				a1.USERTYPE ASC
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.cmon.user.dao.service.persistence.UserMappingFinder.count">
+		<![CDATA[
+			SELECT
+				count(*) AS COUNT_VALUE
+			FROM
+				dm_usermapping as a1
+			WHERE
+				(lower(a1.name) LIKE ? [$AND_OR_NULL_CHECK$])
+				AND (a1.USERTYPE = ?)
+				AND (a1.ORGCODE1 = ?)
+				AND (a1.ORGCODE2 = ?)
+		]]>
+	</sql>
+</custom-sql>

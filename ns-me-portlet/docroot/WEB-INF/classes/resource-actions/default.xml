@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
+
+<resource-action-mapping>
+	<portlet-resource>
+		<portlet-name>2</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+				<action-key>CONFIGURATION</action-key>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults />
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+				<action-key>CONFIGURATION</action-key>
+				<action-key>ADD_TO_PAGE</action-key>
+			</guest-unsupported>
+		</permissions>
+	</portlet-resource>
+	
+	<portlet-resource>
+		<portlet-name>10</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+				<action-key>CONFIGURATION</action-key>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults >
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+				<action-key>CONFIGURATION</action-key>
+				<action-key>ADD_TO_PAGE</action-key>
+			</guest-unsupported>
+		</permissions>
+	</portlet-resource>
+
+	<model-resource>
+		<model-name>vn.dtt.cmon.user.dao.model.UserMapping</model-name>
+		<portlet-ref>
+			<portlet-name>1</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ADMIN_USER</action-key>
+				<action-key>ADMIN_NUOCSACH</action-key>
+				<action-key>ADMIN_VESINH</action-key>
+				<action-key>ADMIN_VESINH_GSV</action-key>
+				<action-key>ADMIN_NUOCSACH_GSV</action-key>
+				<action-key>ADD_BAOCAO</action-key>
+				<action-key>DELETE</action-key>
+			</supports>
+			<site-member-defaults />
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key>ADMIN_USER</action-key>
+				<action-key>ADMIN_NUOCSACH</action-key>
+				<action-key>ADMIN_VESINH</action-key>
+				<action-key>ADMIN_VESINH_GSV</action-key>
+				<action-key>ADMIN_NUOCSACH_GSV</action-key>
+				<action-key>ADD_BAOCAO</action-key>
+				<action-key>DELETE</action-key>
+				<action-key>PERMISSIONS</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+	<model-resource>
+		<model-name>vn.dtt.sol.ns.tramcap.dao.model.TramCapNuoc</model-name>
+		<portlet-ref>
+			<portlet-name>1</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>VIEW_TRAM_CAP</action-key>
+				<action-key>VIEW_DAU_NOI</action-key>
+				<action-key>VIEW_KIEM_DEM</action-key>
+				<action-key>VIEW_VESINH</action-key>
+				<action-key>ADMIN_TRAM_CAP</action-key>
+				<action-key>ADMIN_BENVUNG</action-key>
+				<action-key>ADMIN_VANHANH</action-key>
+				<action-key>ADMIN_KEHOACH_KIEMDEM</action-key>
+				<action-key>ADMIN_DAUNOI</action-key>
+				<action-key>ADMIN_VESINH</action-key>
+				<action-key>ADMIN_KDV</action-key>
+				<action-key>ADMIN_NGUOIDUNG</action-key>
+			</supports>
+			<site-member-defaults />
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key>VIEW_TRAM_CAP</action-key>
+				<action-key>VIEW_DAU_NOI</action-key>
+				<action-key>VIEW_KIEM_DEM</action-key>
+				<action-key>ADMIN_TRAM_CAP</action-key>
+				<action-key>ADMIN_BENVUNG</action-key>
+				<action-key>ADMIN_VANHANH</action-key>
+				<action-key>ADMIN_KEHOACH_KIEMDEM</action-key>
+				<action-key>ADMIN_DAUNOI</action-key>
+				<action-key>ADMIN_NGUOIDUNG</action-key>
+				<action-key>VIEW_VESINH</action-key>
+				<action-key>ADMIN_VESINH</action-key>
+				<action-key>ADMIN_KDV</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+	<model-resource>
+		<model-name>vn.dtt.sol.ns.baocaodli</model-name>
+		<portlet-ref>
+			<portlet-name>10</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ADD_BAOCAO</action-key>
+				<action-key>DELETE</action-key>
+				<action-key>SETTINGS</action-key>
+				<action-key>PERMISSIONS</action-key>
+			</supports>
+			<site-member-defaults />
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key>ADD_BAOCAO</action-key>
+				<action-key>DELETE</action-key>
+				<action-key>SETTINGS</action-key>
+				<action-key>PERMISSIONS</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+	<model-resource>
+		<model-name>vn.dtt.sol.ns.baocaodli.dao.model.BaoCaoDLI</model-name>
+		<portlet-ref>
+			<portlet-name>10</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>VIEW</action-key>
+				<action-key>UPDATE</action-key>
+				<action-key>DELETE</action-key>
+				<action-key>PERMISSIONS</action-key>
+			</supports>
+			<site-member-defaults >
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key>UPDATE</action-key>
+				<action-key>DELETE</action-key>
+				<action-key>PERMISSIONS</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+</resource-action-mapping>

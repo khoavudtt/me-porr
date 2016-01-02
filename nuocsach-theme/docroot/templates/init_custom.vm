@@ -1,0 +1,28 @@
+#*
+This file allows you to override and define new Velocity variables.
+*#
+#set ($dir_include = "/html")
+
+#set ($top_head_include = "$dir_include/common/themes/top_head.jsp")
+
+#set ($site_banner = "${images_folder}/custom/banner.png")
+
+#set ($site_banner_height = 117)
+
+#set ($site_banner_width = 1000)
+
+#set ($home_page_icon = "${images_folder}/custom/home.png")
+
+#set ($site_logo = "${images_folder}/custom/logo.png")
+
+#set ($site_logo_height = 104)
+
+#set ($site_logo_width = 103)
+
+#set ($site_sologan = "${images_folder}/custom/sologan.png")
+
+#set ($site_sologan_height = 84)
+
+#set ($site_sologan_width = 365)
+
+#set ($dashboard_url = "/group/guest/main-desk")

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dli_12_tu_subreport2_subreport2" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8fd63ce9-84e6-4d69-a2f5-0d6eeb91ef6e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="ghiChu" class="java.lang.String">
+		<fieldDescription><![CDATA[ghiChu]]></fieldDescription>
+	</field>
+	<field name="huyen" class="java.lang.String">
+		<fieldDescription><![CDATA[huyen]]></fieldDescription>
+	</field>
+	<field name="soNhaTieuHGDHVSMoi" class="java.lang.Integer">
+		<fieldDescription><![CDATA[soNhaTieuHGDHVSMoi]]></fieldDescription>
+	</field>
+	<field name="tenTinh" class="java.lang.String">
+		<fieldDescription><![CDATA[tenTinh]]></fieldDescription>
+	</field>
+	<field name="xa" class="java.lang.String">
+		<fieldDescription><![CDATA[xa]]></fieldDescription>
+	</field>
+	<variable name="TOTAL_DANSO" class="java.math.BigDecimal" resetType="Group" resetGroup="tenHuyen" calculation="Sum">
+		<variableExpression><![CDATA[$F{soNhaTieuHGDHVSMoi}]]></variableExpression>
+	</variable>
+	<group name="tenHuyen">
+		<groupExpression><![CDATA[$F{huyen}]]></groupExpression>
+		<groupFooter>
+			<band height="20">
+				<frame>
+					<reportElement x="0" y="0" width="555" height="20" uuid="2e467952-c96f-4084-bc5f-f0ba0bb7e3b1"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="0" y="0" width="235" height="20" uuid="7e29b54e-2aa0-4db2-8860-2a2930929458"/>
+						<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+							<pen lineWidth="1.0"/>
+							<topPen lineWidth="1.0"/>
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="1.0"/>
+							<rightPen lineWidth="1.0"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Times New Roman" size="13" isBold="true"/>
+							<paragraph leftIndent="3"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Tổng huyện "+(($F{huyen} != null && $F{huyen}.trim().length() > 0) ? $F{huyen} : "")]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" pattern="#,##0">
+						<reportElement positionType="Float" x="235" y="0" width="150" height="20" uuid="9a7e5514-4769-4410-9ea9-680ae268851e"/>
+						<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+							<pen lineWidth="1.0"/>
+							<topPen lineWidth="1.0"/>
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="1.0"/>
+							<rightPen lineWidth="1.0"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Times New Roman" size="13" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[(($V{TOTAL_DANSO} != null ) ? $V{TOTAL_DANSO} : 0)]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" pattern="">
+						<reportElement positionType="Float" x="385" y="0" width="170" height="20" uuid="d0b4643d-509c-42b7-b292-c413ca48b471"/>
+						<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+							<pen lineWidth="1.0"/>
+							<topPen lineWidth="1.0"/>
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="1.0"/>
+							<rightPen lineWidth="1.0"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Times New Roman" size="13" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="20" uuid="a5c2ec27-1ad6-46a5-9431-efc8b3bde22d"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="40" y="0" width="90" height="20" isPrintInFirstWholeBand="true" uuid="55b60918-8ee3-41b6-9984-11fa5024173d"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="false"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{huyen} != null && $F{huyen}.trim().length() > 0) ? $F{huyen} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="130" y="0" width="105" height="20" uuid="7a44db6c-6147-496d-973d-c8699c7257bb"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="false"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{xa} != null && $F{xa}.trim().length() > 0) ? $F{xa} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="tenHuyen" pattern="#,##0">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="235" y="0" width="150" height="20" uuid="48534144-c541-46d1-8736-dc02db0d433d"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{soNhaTieuHGDHVSMoi} != null ) ? $F{soNhaTieuHGDHVSMoi} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="385" y="0" width="170" height="20" uuid="45ed90a6-cd08-4590-8f54-459969563f66"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{ghiChu} != null && $F{ghiChu}.trim().length() > 0) ? $F{ghiChu} : "")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

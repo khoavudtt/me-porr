@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinder.finder">
+		<![CDATA[
+			SELECT * 
+			FROM me_maukiemdem 
+			WHERE
+				id <> 0 
+				AND matinh = ? 
+				AND mahuyen = ? 
+				AND maxa = ? 
+				AND nam = ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinder.count">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE
+			FROM me_maukiemdem 
+			WHERE
+				id <> 0 
+				AND matinh = ? 
+				AND mahuyen = ? 
+				AND maxa = ? 
+				AND nam = ?
+		]]>
+	</sql>
+</custom-sql>

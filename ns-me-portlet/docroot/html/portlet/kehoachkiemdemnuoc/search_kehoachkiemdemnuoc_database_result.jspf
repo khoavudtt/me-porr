@@ -1,0 +1,28 @@
+<%@page import="vn.dtt.sol.ns.tramcap.business.KeHoachKiemDemNuocBusiness"%>
+<%@page import="vn.dtt.sol.ns.reporting.KeHoachKiemDemNuocReportModel"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="org.apache.commons.beanutils.BeanComparator"%>
+<%
+
+List<KeHoachKiemDemNuocReportModel> resultBase = new ArrayList<KeHoachKiemDemNuocReportModel>(
+		KeHoachKiemDemNuocBusiness.getListKeHoachKiemDemNuocByTypeUser(userMapping, 
+													maTinh, 
+													kiemDemVienId, 
+													tramCapNuocId, 
+													trangThai,
+													nam,
+													idNguoiTao,
+													searchContainer.getStart(), searchContainer.getEnd()));
+results = resultBase;
+total = KeHoachKiemDemNuocBusiness.countKeHoachKiemDemNuocByTypeUser(userMapping, 
+		maTinh, 
+		kiemDemVienId, 
+		tramCapNuocId, 
+		trangThai, 
+		nam,
+		idNguoiTao,
+		searchContainer.getStart(), searchContainer.getEnd());
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

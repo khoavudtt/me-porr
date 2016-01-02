@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaBenVungFinder.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_danhgiabenvung
+			[$WHERE_CLAUSE$]
+		]]>
+	</sql>
+	<sql id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaBenVungFinder.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_danhgiabenvung
+			[$WHERE_CLAUSE$]
+		]]>
+	</sql>
+</custom-sql>

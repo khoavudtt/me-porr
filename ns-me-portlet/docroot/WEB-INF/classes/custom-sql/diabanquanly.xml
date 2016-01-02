@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="lay.danh.sach.xa.khong.thuoc.huyen.thuoc.tram.cap.cua.nguoi.dung.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND NODE_2 = ?
+			AND LEVEL = 3
+			AND NODE_3 NOT IN (
+				SELECT
+					me_diabanqly_tramcap.maXa
+				FROM
+					me_diabanqly_tramcap
+				WHERE
+					me_diabanqly_tramcap.maTinh = ?
+				AND
+					me_diabanqly_tramcap.maHuyen = ?	
+				AND
+					me_diabanqly_tramcap.maTramCap = ?
+				AND 
+					me_diabanqly_tramcap.userId = ?
+				GROUP BY 
+					me_diabanqly_tramcap.maXa
+			)
+		]]>
+	</sql>
+	<sql id="lay.danh.sach.xa.thuoc.huyen.thuoc.tram.cap.cua.nguoi.dung.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND NODE_2 = ?
+			AND LEVEL = 3
+			AND NODE_3 IN (
+				SELECT
+					me_diabanqly_tramcap.maXa
+				FROM
+					me_diabanqly_tramcap
+				WHERE
+					me_diabanqly_tramcap.maTinh = ?
+				AND
+					me_diabanqly_tramcap.maHuyen = ?	
+				AND
+					me_diabanqly_tramcap.maTramCap = ?
+				AND 
+					me_diabanqly_tramcap.userId = ?
+				GROUP BY 
+					me_diabanqly_tramcap.maXa
+			)
+		]]>
+	</sql>
+	<sql id="lay.danh.sach.huyen.thuoc.tram.cap.cua.nguoi.dung.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND LEVEL = 2
+			AND NODE_2 IN (
+				SELECT
+					me_diabanqly_tramcap.maHuyen
+				FROM
+					me_diabanqly_tramcap
+				WHERE
+					me_diabanqly_tramcap.maTinh = ?
+				AND
+					me_diabanqly_tramcap.maTramCap = ?
+				AND 
+					me_diabanqly_tramcap.userId = ?
+				GROUP BY 
+					me_diabanqly_tramcap.maHuyen
+			)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.xa.thuoc.huyen.duoc.chon.user.count">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND NODE_2 = ?
+			AND LEVEL = 3
+			AND NODE_3 NOT IN (
+				SELECT
+					me_diabanqly_huyen.maXa
+				FROM
+					me_diabanqly_huyen
+				WHERE
+					me_diabanqly_huyen.maTinh = ?
+				AND me_diabanqly_huyen.maHuyen = ?
+				AND me_diabanqly_huyen.userId = ?
+				GROUP BY me_diabanqly_huyen.maXa
+			)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.xa.thuoc.huyen.da.phan.dia.ban.cua.user.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND LEVEL = 2
+			AND NODE_2 IN (
+				SELECT
+					me_diabanqly_huyen.maHuyen
+				FROM
+					me_diabanqly_huyen
+				WHERE
+					me_diabanqly_huyen.maTinh = ?
+				AND
+					me_diabanqly_huyen.userId = ?
+				GROUP BY me_diabanqly_huyen.maHuyen
+			)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.huyen.da.phan.dia.ban.cua.user.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND LEVEL = 2
+			AND NODE_2 IN (
+				SELECT
+					me_diabanqly_huyen.maHuyen
+				FROM
+					me_diabanqly_huyen
+				WHERE
+					me_diabanqly_huyen.maTinh = ?
+				AND
+					me_diabanqly_huyen.userId = ?
+				GROUP BY me_diabanqly_huyen.maHuyen
+			)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.xa.thuoc.huyen.da.phan.dia.ban.cua.user">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND NODE_2 = ?
+			AND LEVEL = 3
+			AND NODE_3 IN (
+				SELECT
+					me_diabanqly_huyen.maXa
+				FROM
+					me_diabanqly_huyen
+				WHERE
+					me_diabanqly_huyen.maTinh = ?
+				AND
+					me_diabanqly_huyen.maHuyen = ?
+				AND
+					me_diabanqly_huyen.userId = ?
+			
+				GROUP BY me_diabanqly_huyen.maXa
+			)		
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.huyen.da.phan.dia.ban.cua.user">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND LEVEL = 2
+			AND NODE_2 IN (
+				SELECT
+					me_diabanqly_huyen.maHuyen
+				FROM
+					me_diabanqly_huyen
+				WHERE
+					me_diabanqly_huyen.maTinh = ?
+				AND
+					me_diabanqly_huyen.userId = ?
+				GROUP BY me_diabanqly_huyen.maHuyen
+			)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.xa.thuoc.tram.cap.nuoc.va.huyen">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND LEVEL = 3
+			AND dm_dataitem.NODE_2 = ?
+			AND NODE_3 IN (
+				SELECT
+					me_diabanqly_tramcap.maXa
+				FROM
+					me_diabanqly_tramcap
+				WHERE
+					me_diabanqly_tramcap.maTinh = ?
+				AND
+					me_diabanqly_tramcap.maTramCap = ?
+				AND 
+					me_diabanqly_tramcap.maHuyen = ?
+				GROUP BY 
+					me_diabanqly_tramcap.maXa
+				)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.huyen.thuoc.tram.cap.nuoc">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND LEVEL = 2
+			AND NODE_2 IN (
+				SELECT
+					me_diabanqly_tramcap.maHuyen
+				FROM
+					me_diabanqly_tramcap
+				WHERE
+					me_diabanqly_tramcap.maTinh = ?
+				AND
+					me_diabanqly_tramcap.maTramCap = ?
+				GROUP BY 
+					me_diabanqly_tramcap.maHuyen
+				)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.huyen.duoc.lua.chon.khi.tao.tai.khoan.tinh">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND LEVEL = 2
+			AND NODE_1 = ?
+			AND NODE_2 NOT IN (
+				SELECT
+					me_diabanqly_tinh.maHuyen
+				FROM
+					me_diabanqly_tinh
+				WHERE
+					me_diabanqly_tinh.maTinh = ?
+				AND me_diabanqly_tinh.userId = ?
+			)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.tinh.giam.sat.by.user.tu.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND LEVEL = 1
+			AND NODE_1 IN (
+				SELECT
+					me_diabanqly_tu.maTinh
+				FROM
+					me_diabanqly_tu
+				WHERE
+					me_diabanqly_tu.userId = ?
+			)
+		]]>
+	</sql>
+	
+	<sql id="lay.danh.sach.tinh.giam.sat.by.user.tu.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND LEVEL = 1
+			AND NODE_1 IN (
+				SELECT
+					me_diabanqly_tu.maTinh
+				FROM
+					me_diabanqly_tu
+				WHERE
+					me_diabanqly_tu.userId = ?
+			)
+		]]>
+	</sql>
+	
+
+	<sql id="lay.danh.sach.huyen.giam.sat.by.user.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND LEVEL = 2
+			AND NODE_2 IN (
+				SELECT
+					me_diabanqly_huyen.maHuyen
+				FROM
+					me_diabanqly_huyen
+				WHERE
+					me_diabanqly_huyen.userId = ?
+				GROUP BY maHuyen
+			)		
+		]]>
+	</sql>
+	<sql id="lay.danh.sach.huyen.giam.sat.by.user.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND LEVEL = 2
+			AND NODE_2 IN (
+				SELECT
+					me_diabanqly_huyen.maHuyen
+				FROM
+					me_diabanqly_huyen
+				WHERE
+					me_diabanqly_huyen.userId = ?
+				GROUP BY maHuyen
+			)		
+		]]>
+	</sql>
+
+
+	<sql id="lay.danh.sach.gsv.theo.dia.ban.huyen.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_usermapping
+			WHERE
+				USERTYPE = 3
+			AND USERID IN (
+				SELECT
+					USERID
+				FROM
+					me_diabanqly_huyen
+				WHERE
+					me_diabanqly_huyen.maTinh = ?
+				AND me_diabanqly_huyen.maHuyen = ?
+				GROUP BY
+					me_diabanqly_huyen.userId
+			)
+		]]>
+	</sql>
+
+
+	<sql id="lay.danh.sach.tram.cap.thong.qua.phan.dia.ban.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_tramcapnuoc
+			WHERE
+				ID IN (
+					SELECT
+						maTramCap
+					FROM
+						me_diabanqly_tramcap
+					WHERE 
+						maTinh = ?
+						AND userId = ?
+					GROUP BY
+						maTinh,
+						maTramCap
+				)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.tram.cap.thong.qua.phan.dia.ban.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_tramcapnuoc
+			WHERE
+				ID IN (
+					SELECT
+						maTramCap
+					FROM
+						me_diabanqly_tramcap
+					WHERE 
+						maTinh = ?
+						AND userId = ?
+					GROUP BY
+						maTinh,
+						maTramCap
+				)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.huyen.thong.qua.dia.ban.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND LEVEL = 2
+			AND NODE_2 IN (
+				SELECT
+					me_diabanqly_tinh.maHuyen
+				FROM
+					me_diabanqly_tinh
+				WHERE
+					me_diabanqly_tinh.userId = ?
+			)
+		]]>
+	</sql>
+	
+	<sql id="lay.danh.sach.huyen.thong.qua.dia.ban.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND NODE_1 = ?
+			AND LEVEL = 2
+			AND NODE_2 IN (
+				SELECT
+					me_diabanqly_tinh.maHuyen
+				FROM
+					me_diabanqly_tinh
+				WHERE
+					me_diabanqly_tinh.userId = ?
+			)
+		]]>
+	</sql>
+
+	<sql id="lay.danh.sach.gsv.thong.qua.phan.dia.ban.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_usermapping
+			WHERE
+				dm_usermapping.USERID IN (
+					SELECT
+						me_diabanqly_tramcap.userId
+					FROM
+						me_diabanqly_tramcap
+					WHERE
+						MATINH = ?
+						AND me_diabanqly_tramcap.maTramCap = ?
+					GROUP BY
+						UserId
+				)
+		]]>
+    </sql>
+
+    <sql id="lay.danh.sach.tram.cap.thong.qua.phan.dia.ban.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_tramcapnuoc
+			WHERE
+				ID IN (
+					SELECT
+						maTramCap
+					FROM
+						me_diabanqly_tramcap
+					WHERE 
+						maTinh = ?
+						AND userId = ?
+					GROUP BY
+						maTinh,
+						maTramCap
+				)
+		]]>
+    </sql>
+    
+    <sql id="vn.dtt.cmon.user.dao.service.persistence.KiemDemVienFinder.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kiemdemvien AS kdv
+			WHERE
+				(kdv.CAPHOATDONG = ? [$AND_OR_NULL_CHECK$]) 
+			AND (kdv.ORGCODE2 = ? [$AND_OR_NULL_CHECK$])
+		]]>
+    </sql>
+
+    <sql id="vn.dtt.cmon.kiemdemvien.dao.service.persistence.KiemDemVienFinder.finderCTHTT">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_kiemdemvien
+			WHERE
+				ORGCODE1 = ?
+			AND ORGCODE2 = ?
+			AND CAPHOATDONG = ?
+			AND TRANGTHAI = ?
+		]]>
+    </sql>
+    
+    
+    <sql id="vn.dtt.cmon.kiemdemvien.dao.service.persistence.KiemDemVienFinder.countCTHTT">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kiemdemvien
+			WHERE
+				ORGCODE1 = ?
+			AND ORGCODE2 = ?
+			AND CAPHOATDONG = ?
+			AND TRANGTHAI = ?
+		]]>
+    </sql>
+</custom-sql>

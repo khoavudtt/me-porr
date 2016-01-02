@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dli_12_ct" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ee10d8f-3545-4b19-8fe5-9e497a7fb4b1">
+	<property name="ireport.zoom" value="1.0000000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="4"/>
+	<property name="net.sf.jasperreports.export.xls.sheet.names.sheet1" value="DLI 1.2 Chi tiết"/>
+	<subDataset name="dataset1" uuid="22ab810a-da18-43eb-a6c5-b3bcb410675a">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="HN" class="java.lang.String">
+			<fieldDescription><![CDATA[HN]]></fieldDescription>
+		</field>
+		<field name="TD" class="java.lang.String">
+			<fieldDescription><![CDATA[TD]]></fieldDescription>
+		</field>
+		<field name="TH" class="java.lang.String">
+			<fieldDescription><![CDATA[TH]]></fieldDescription>
+		</field>
+		<field name="chim" class="java.lang.String">
+			<fieldDescription><![CDATA[chim]]></fieldDescription>
+		</field>
+		<field name="class" class="java.lang.Class">
+			<fieldDescription><![CDATA[class]]></fieldDescription>
+		</field>
+		<field name="coNhungKoHVS" class="java.lang.String">
+			<fieldDescription><![CDATA[coNhungKoHVS]]></fieldDescription>
+		</field>
+		<field name="ghiChu" class="java.lang.String">
+			<fieldDescription><![CDATA[ghiChu]]></fieldDescription>
+		</field>
+		<field name="hoNgheo" class="java.lang.String">
+			<fieldDescription><![CDATA[hoNgheo]]></fieldDescription>
+		</field>
+		<field name="huyen" class="java.lang.String">
+			<fieldDescription><![CDATA[huyen]]></fieldDescription>
+		</field>
+		<field name="khac" class="java.lang.String">
+			<fieldDescription><![CDATA[khac]]></fieldDescription>
+		</field>
+		<field name="koCoNhaTieu" class="java.lang.String">
+			<fieldDescription><![CDATA[koCoNhaTieu]]></fieldDescription>
+		</field>
+		<field name="tenChuHo" class="java.lang.String">
+			<fieldDescription><![CDATA[tenChuHo]]></fieldDescription>
+		</field>
+		<field name="thangNamHoanThanh" class="java.lang.String">
+			<fieldDescription><![CDATA[thangNamHoanThanh]]></fieldDescription>
+		</field>
+		<field name="thon" class="java.lang.String">
+			<fieldDescription><![CDATA[thon]]></fieldDescription>
+		</field>
+		<field name="toaDo" class="java.lang.String">
+			<fieldDescription><![CDATA[toaDo]]></fieldDescription>
+		</field>
+		<field name="troCap" class="java.lang.String">
+			<fieldDescription><![CDATA[troCap]]></fieldDescription>
+		</field>
+		<field name="tuXay" class="java.lang.String">
+			<fieldDescription><![CDATA[tuXay]]></fieldDescription>
+		</field>
+		<field name="vayVonNHCS" class="java.lang.String">
+			<fieldDescription><![CDATA[vayVonNHCS]]></fieldDescription>
+		</field>
+		<field name="xa" class="java.lang.String">
+			<fieldDescription><![CDATA[xa]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="baoCaoNgayThangNam" class="java.lang.String">
+		<fieldDescription><![CDATA[baoCaoNgayThangNam]]></fieldDescription>
+	</field>
+	<field name="baoCaoSo" class="java.lang.String">
+		<fieldDescription><![CDATA[baoCaoSo]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="lstDSNhaTieuHGDXayMoiDanhSach" class="java.util.List">
+		<fieldDescription><![CDATA[lstDSNhaTieuHGDXayMoiDanhSach]]></fieldDescription>
+	</field>
+	<field name="nam" class="java.lang.String">
+		<fieldDescription><![CDATA[nam]]></fieldDescription>
+	</field>
+	<field name="nguoiDuyet" class="java.lang.String">
+		<fieldDescription><![CDATA[nguoiDuyet]]></fieldDescription>
+	</field>
+	<field name="nguoiLap" class="java.lang.String">
+		<fieldDescription><![CDATA[nguoiLap]]></fieldDescription>
+	</field>
+	<field name="tenTinh" class="java.lang.String">
+		<fieldDescription><![CDATA[tenTinh]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="40" width="802" height="20" uuid="8a3d366c-54f8-4d0f-893f-02ade868303c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BÁO CÁO KẾT QUẢ CHỈ SỐ GIẢI NGÂN CHƯƠNG TRÌNH PforR NĂM "+(($F{nam} != null && $F{nam}.trim().length() > 0) ? $F{nam} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="60" width="802" height="20" uuid="28555de0-05e8-4522-ad62-9da316d135ee"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["II. TÌNH HÌNH NHÀ TIÊU HỘ GIA ĐÌNH XÂY MỜI TỪ 01/01/"+(($F{nam} != null && $F{nam}.trim().length() > 0) ? $F{nam} : "")+" ĐẾN 31/12/"+(($F{nam} != null && $F{nam}.trim().length() > 0) ? $F{nam} : "")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="180" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="30" height="140" uuid="9a6ead22-c59e-4878-b74c-01c81ba1256c"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TT"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="30" y="0" width="170" height="75" uuid="ef9bb5df-78a6-4788-b393-f6ed49c88765"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Địa chỉ"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="30" y="75" width="50" height="65" uuid="008c44b2-fe39-4860-9cff-34006b064949"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Huyện"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="80" y="75" width="60" height="65" uuid="b4529e6d-1257-47ac-bc30-18e5d1547718"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Xã"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="140" y="75" width="60" height="65" uuid="b3cee3f6-0d0e-4b00-974f-8d91a6260a55"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Thôn/Bản"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="200" y="0" width="100" height="140" uuid="f5ea9852-cfe4-4102-828e-cb38918f56e9"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Họ và tên chủ hộ"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="300" y="0" width="37" height="140" uuid="f7e0439a-432b-490d-a725-4b8c03987925"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hộ nghèo"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="337" y="0" width="100" height="40" uuid="a8eb1c21-68ff-4244-ad4e-26d0ce3b17e8"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hiện trạng trước khi xây mới"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="337" y="40" width="50" height="100" uuid="2c9e45d1-f52d-41f7-960e-366317e3a2ab"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Không có nhà tiêu"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="387" y="40" width="50" height="100" uuid="7f48724f-5edb-46ca-84be-fae1b1bc3d73"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Có nhưng không HVS"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="437" y="0" width="335" height="40" uuid="5fdf513e-511a-4c50-84f1-699174b41f9a"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nhà tiêu HVS xây mới"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="437" y="40" width="155" height="35" uuid="aa2c04e9-6a9e-413c-8d10-c241e9085529"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Loại"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="437" y="75" width="30" height="65" uuid="6d7bd960-b6ac-43d6-a6ac-b3cb96eac329"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TH"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="467" y="75" width="30" height="65" uuid="7317cf5a-8a2d-42cc-b30b-2ae0883df65a"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TD"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="497" y="75" width="30" height="65" uuid="0ae13cd6-7bba-462e-b88c-a063b1ebd99c"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["HN"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="527" y="75" width="30" height="65" uuid="91e8c74f-56b3-4039-9199-c22abf68968b"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Chìm"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="557" y="75" width="35" height="65" uuid="7da6da0b-3fbf-49e6-b467-68d7811045c5"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Khác"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="592" y="40" width="110" height="35" uuid="41847626-90cf-4142-8b22-f07dab701404"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Xây dựng từ nguồn"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="592" y="75" width="35" height="65" uuid="5f973dcd-51cb-45b1-a737-6358ba7290a1"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Trợ cấp"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="627" y="75" width="45" height="65" uuid="86775a1c-eff0-40e8-8983-0a83b9ad931f"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vay vốn NHCS"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="672" y="75" width="30" height="65" uuid="28e8b314-b74b-4de1-a956-a9283d83adb4"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tự xây"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="702" y="40" width="70" height="100" uuid="eaa09ecb-45df-4eca-be6c-b9df9426fb82"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tháng/năm hoàn thành"]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="160" width="802" height="20" uuid="6d3d55c1-962f-4e1b-8041-91d6983783ed"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="03be0cf9-2c86-459c-b9d0-75d436674e1a">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lstDSNhaTieuHGDXayMoiDanhSach})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="802">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="30" height="20" uuid="eab7d705-affb-4332-a290-035c1e1c0e1d"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="300" y="0" width="37" height="20" uuid="6af27f1a-567e-4441-b550-b7d2627c40f1"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{hoNgheo} != null && $F{hoNgheo}.trim().length() > 0) ? $F{hoNgheo} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="30" y="0" width="50" height="20" uuid="1ae67c9a-e892-49b4-93e2-9de1ad5159e2"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{huyen} != null && $F{huyen}.trim().length() > 0) ? $F{huyen} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="80" y="0" width="60" height="20" uuid="5364f9b7-015e-4b42-abd0-481aa312e9ee"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{xa} != null && $F{xa}.trim().length() > 0) ? $F{xa} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="140" y="0" width="60" height="20" uuid="6d6763d6-e51d-4413-8f61-bf937e708655"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{thon} != null && $F{thon}.trim().length() > 0) ? $F{thon} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="200" y="0" width="100" height="20" uuid="3b18952e-20cd-4289-82fe-4e69cdb882b9"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{tenChuHo} != null && $F{tenChuHo}.trim().length() > 0) ? $F{tenChuHo} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="337" y="0" width="50" height="20" uuid="b76d90d9-127a-45e2-9343-f5a8235531b1"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{koCoNhaTieu} != null && $F{koCoNhaTieu}.trim().length() > 0) ? $F{koCoNhaTieu} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="437" y="0" width="30" height="20" uuid="f676e2f0-6ddb-4aec-872f-377b8b62da80"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{TH} != null && $F{TH}.trim().length() > 0) ? $F{TH} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="387" y="0" width="50" height="20" uuid="fa8a543f-1095-4f90-a812-0ba5d0d450fc"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{coNhungKoHVS} != null && $F{coNhungKoHVS}.trim().length() > 0) ? $F{coNhungKoHVS} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="467" y="0" width="30" height="20" uuid="0f16edca-e8d9-4ed3-8059-2cba2566f4e1"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{TD} != null && $F{TD}.trim().length() > 0) ? $F{TD} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="497" y="0" width="30" height="20" uuid="35ffca20-f776-4cbb-bc2e-302830d60bf0"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{HN} != null && $F{HN}.trim().length() > 0) ? $F{HN} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="672" y="0" width="30" height="20" uuid="4b3bc2a9-b34b-474e-a7ce-24eed926b1cd"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{tuXay} != null && $F{tuXay}.trim().length() > 0) ? $F{tuXay} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="702" y="0" width="70" height="20" uuid="0d854f68-cf4e-4648-a5f2-9c2ef08e7801"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{thangNamHoanThanh} != null && $F{thangNamHoanThanh}.trim().length() > 0) ? $F{thangNamHoanThanh} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="527" y="0" width="30" height="20" uuid="18ded0d7-3f6a-4068-961a-98fc1ed7fd11"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{chim} != null && $F{chim}.trim().length() > 0) ? $F{chim} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="627" y="0" width="45" height="20" uuid="d3ae0703-f74e-4f4c-9c11-695149f6c6fb"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{vayVonNHCS} != null && $F{vayVonNHCS}.trim().length() > 0) ? $F{vayVonNHCS} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="592" y="0" width="35" height="20" uuid="4aba3fb5-9268-4160-bbec-2bad918a1c1d"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{troCap} != null && $F{troCap}.trim().length() > 0) ? $F{troCap} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="557" y="0" width="35" height="20" uuid="79db42e4-ecb7-419c-83e7-079e39e6b218"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{khac} != null && $F{khac}.trim().length() > 0) ? $F{khac} : "")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="772" y="0" width="30" height="20" uuid="581b0655-820c-4b17-8b51-4f3ac8c54d9e"/>
+							<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10" isBold="false" isItalic="false"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{ghiChu} != null && $F{ghiChu}.trim().length() > 0) ? "" : "")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="140" width="30" height="20" uuid="0ed5f6d5-7452-4d80-9b04-5f70f614409e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="300" y="140" width="37" height="20" uuid="35508ab5-fa53-4be5-9fd3-507f6046ef1a"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["6"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="30" y="140" width="50" height="20" uuid="aecc3161-7419-4c3e-a92c-7f6bc99c423a"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="80" y="140" width="60" height="20" uuid="d9c42ed9-d118-4c7c-9254-f2defaa2ce35"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="140" y="140" width="60" height="20" uuid="b6d4edc9-2768-4326-802e-1603536533d4"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="200" y="140" width="100" height="20" uuid="e43b1450-d766-4f66-ad66-7c767d5780a4"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="337" y="140" width="50" height="20" uuid="5e50e9d4-7e96-48df-9fc0-f26eca4d6942"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["7"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="437" y="140" width="30" height="20" uuid="e0cc37b7-9483-444a-a250-7aa2759f9ed9"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="387" y="140" width="50" height="20" uuid="eb1b53cb-32ea-4dbe-aebd-23a5e553e03f"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="467" y="140" width="30" height="20" uuid="44309006-d873-4b97-bcf6-ea08a2b3f58c"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="497" y="140" width="30" height="20" uuid="8e5eb829-7a30-4170-9c16-450196ebfdf7"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["11"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="672" y="140" width="30" height="20" uuid="fd457462-97ae-4e8e-9d92-2ed3d977cbce"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["16"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="702" y="140" width="70" height="20" uuid="532f0936-da72-4bf7-82d4-54fc9fd5ed82"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["17"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="527" y="140" width="30" height="20" uuid="d8055bb0-c473-47d4-a8f5-064fdafa6b23"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["12"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="627" y="140" width="45" height="20" uuid="28316f71-aea8-47bd-a0b2-0e6ff41b33c7"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["15"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="592" y="140" width="35" height="20" uuid="8feeaff7-8cd1-4f58-b9dd-c9240ed17aad"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["14"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="557" y="140" width="35" height="20" uuid="c102f5af-d0f7-41a0-9bd1-e7dd067b4ceb"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["13"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="772" y="0" width="30" height="140" uuid="756e7388-b66b-4cff-b0ea-6d5c774d5a01"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ghi chú"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="772" y="140" width="30" height="20" uuid="a5efa779-abfe-4390-8e99-78524349512e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["18"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="220">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="40" width="300" height="20" uuid="a489dc6c-f821-49c2-bd8c-7569806a5464"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Lập biểu"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="140" width="300" height="20" uuid="6989effc-ef9a-4380-a6b9-c27ed3b0843c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{nguoiLap} != null && $F{nguoiLap}.trim().length() > 0) ? $F{nguoiLap} : "")]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

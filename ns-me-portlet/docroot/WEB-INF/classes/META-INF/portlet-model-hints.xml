@@ -1,0 +1,639 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="vn.dtt.sol.ns.tramcap.dao.model.DanhGiaBenVung">
+		<field name="id" type="long" />
+		<field name="tramCapNuocId" type="int" />
+		<field name="nam" type="int" />
+		<field name="trangThaiCapNuoc" type="int" />
+		<field name="congXuatThucTe" type="int" />
+		<field name="tongDauNoiMoi" type="int" />
+		<field name="tongDauNoiThucTe" type="int" />
+		<field name="soNguoiCapThucTe" type="int" />
+		<field name="nuocThatThoat" type="int" />
+		<field name="nuocDatTieuChuan" type="int" />
+		<field name="nuocCoAsen" type="int" />
+		<field name="tongChiPhi" type="int" />
+		<field name="tongDoanhThu" type="int" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="ketQuaDanhGia" type="int" />
+		<field name="baoCaoDLI" type="int" />
+	</model>
+	<model name="vn.dtt.sol.ns.tramcap.dao.model.DanhGiaVanHanh">
+		<field name="id" type="long" />
+		<field name="tramCapNuocId" type="int" />
+		<field name="thang" type="int" />
+		<field name="nam" type="int" />
+		<field name="congXuatThucTe" type="int" />
+		<field name="nuocThatThoat" type="int" />
+		<field name="nuocDatTieuChuan" type="int" />
+		<field name="nuocCoAsen" type="int" />
+		<field name="trangThaiCapNuoc" type="int" />
+		<field name="chiPhiHoaChat" type="int" />
+		<field name="chiPhiDien" type="int" />
+		<field name="luongNhanVien" type="int" />
+		<field name="chiPhiSuaChua" type="int" />
+		<field name="doanhThu" type="int" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="sanLuongSanXuat" type="int" />
+		<field name="sanLuongTieuHao" type="int" />
+	</model>
+	<model name="vn.dtt.sol.ns.tramcap.dao.model.DauNoiNuoc">
+		<field name="id" type="long" />
+		<field name="tramCapNuocId" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="thonXom" type="String" />
+		<field name="tenChuHo" type="String" />
+		<field name="gioiTinh" type="int" />
+		<field name="ngayDauNoiHopDong" type="Date" />
+		<field name="trangThai" type="int" />
+		<field name="namBaoCao" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="int" />
+		<field name="soNguoiTrongHo" type="int" />
+		<field name="thanhPhanHoGiaDinh" type="int" />
+		<field name="tongDoanhThu" type="int" />
+		<field name="kinhDo" type="String" />
+		<field name="viDo" type="String" />
+		<field name="ngayDauNoiThucTe" type="Date" />
+		<field name="soSeryDongHo" type="String" />
+		<field name="danhGiaNuocHVS" type="String" />
+		<field name="ngayKiemDem" type="Date" />
+		<field name="ngayDanhGia" type="Date" />
+		<field name="idNguoiDanhGia" type="int" />
+	</model>
+	<model name="vn.dtt.sol.ns.tramcap.dao.model.KeHoachKiemDemNuoc">
+		<field name="id" type="int" />
+		<field name="nam" type="int" />
+		<field name="tramCapNuocId" type="int" />
+		<field name="kiemDemVienId" type="int" />
+		<field name="ngayBatDau" type="Date" />
+		<field name="ngayKetThuc" type="Date" />
+		<field name="moTa" type="String" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="int" />
+		<field name="ngayXuatBan" type="Date" />
+		<field name="idNguoiXuatBan" type="int" />
+		<field name="ngayDong" type="Date" />
+		<field name="idNguoiDong" type="int" />
+		<field name="lastSavePoint" type="Date" />
+	</model>
+	<model name="vn.dtt.sol.ns.tramcap.dao.model.KeHoachNuocSach">
+		<field name="id" type="long" />
+		<field name="tramCapNuocId" type="int" />
+		<field name="nam" type="int" />
+		<field name="soDauNoiMoi" type="int" />
+		<field name="soNguoiHuongLoi" type="int" />
+		<field name="ghiChu" type="String" />
+	</model>
+	<model name="vn.dtt.sol.ns.tramcap.dao.model.THONGTINKIEMDEMNUOC">
+		<field name="id" type="long" />
+		<field name="dauNoiNuocId" type="long" />
+		<field name="keHoachKiemDemNuocId" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="thonXom" type="String" />
+		<field name="tenChuHo" type="String" />
+		<field name="gioiTinhChuHo" type="int" />
+		<field name="ngayKiemDem" type="Date" />
+		<field name="timThayNha" type="int" />
+		<field name="coNguoiONha" type="int" />
+		<field name="hoTenNguoiTraLoi" type="String" />
+		<field name="laChuHoKhong" type="int" />
+		<field name="gioiTinhNguoiTraLoi" type="String" />
+		<field name="tenDanToc" type="String" />
+		<field name="kinhDo" type="String" />
+		<field name="viDo" type="String" />
+		<field name="soNguoiTrongHo" type="int" />
+		<field name="thanhPhanHoGd" type="int" />
+		<field name="chuHoDungDs" type="int" />
+		<field name="lyDoKhongDungDs" type="String" />
+		<field name="tenChuHoHienTai" type="String" />
+		<field name="gioiTinhChuHoHienTai" type="int" />
+		<field name="dauNoiChua" type="int" />
+		<field name="anhDauNoi" type="String" />
+		<field name="thoiGianDauHopDong" type="Date" />
+		<field name="thoiGianDauNoiThucTe" type="Date" />
+		<field name="voiNuocChayKhong" type="int" />
+		<field name="nuocTrongKhong" type="int" />
+		<field name="mauNuoc" type="String" />
+		<field name="muiNuoc" type="String" />
+		<field name="viNuoc" type="String" />
+		<field name="loaiKhac" type="String" />
+		<field name="daTungDucKhong" type="int" />
+		<field name="mauNuocTungCo" type="String" />
+		<field name="muiNuocTungCo" type="String" />
+		<field name="viNuocTungCo" type="String" />
+		<field name="loaiKhacTungCo" type="String" />
+		<field name="coBeChuaNuoc" type="int" />
+		<field name="tinhTrangBe" type="int" />
+		<field name="anhBeChua" type="String" />
+		<field name="biMatNuoc" type="int" />
+		<field name="soLanMatNuoc" type="int" />
+		<field name="soGioTrungBinh" type="int" />
+		<field name="soSeRyDongHo" type="String" />
+		<field name="chiSoDongHo" type="String" />
+		<field name="anhDongHo" type="String" />
+		<field name="ghiChu" type="String" />
+		<field name="daKetThucDieuTra" type="int" />
+		<field name="lyDoKhongHoanThanh" type="String" />
+		<field name="iMei" type="String" />
+		<field name="taiKhoan" type="String" />
+		<field name="danhGiaKiemDem" type="int" />
+	</model>
+	<model name="vn.dtt.sol.ns.tramcap.dao.model.TramCapNuoc">
+		<field name="id" type="long" />
+		<field name="maTram" type="String" />
+		<field name="tenTram" type="String" />
+		<field name="maTinh" type="String" />
+		<field name="tenTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="tenHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="tenXa" type="String" />
+		<field name="diaChi" type="String" />
+		<field name="kinhDo" type="String" />
+		<field name="viDo" type="String" />
+		<field name="loaiHinh" type="int" />
+		<field name="maMoHinh" type="String" />
+		<field name="tenMoHinh" type="String" />
+		<field name="congXuatThietKe" type="int" />
+		<field name="tongDauNoiThietKe" type="int" />
+		<field name="soNguoiCapThietKe" type="int" />
+		<field name="tinhTrangDuAn" type="int" />
+		<field name="tienDoXayDung" type="int" />
+		<field name="namXayDung" type="int" />
+		<field name="namHoanThanh" type="int" />
+		<field name="ngayVanHanh" type="Date" />
+		<field name="boMayVanHanh" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="long" />
+		<field name="idNguoiDanhGia" type="long" />
+		<field name="ngayDanhGia" type="Date" />
+		<field name="trangThaiCapNuoc" type="int" />
+		<field name="congXuatThucTe" type="int" />
+		<field name="tongDauNoiThucTe" type="int" />
+		<field name="soNguoiCapThucTe" type="int" />
+		<field name="tongChiPhi" type="int" />
+		<field name="tongDoanhThu" type="int" />
+		<field name="nuocDatTieuChuan" type="int" />
+		<field name="nuocCoAsen" type="int" />
+		<field name="nuocThatThoat" type="int" />
+		<field name="trangThaiDanhGia" type="int" />
+	</model>
+	<model name="vn.dtt.cmon.dm.dao.model.DATAGROUP">
+		<field name="id" type="long" />
+		<field name="code" type="String" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+	</model>
+	<model name="vn.dtt.cmon.dm.dao.model.DATAITEM">
+		<field name="id" type="long" />
+		<field name="dataGroupId" type="long" />
+		<field name="code" type="String" />
+		<field name="node1" type="String" />
+		<field name="node2" type="String" />
+		<field name="node3" type="String" />
+		<field name="node4" type="String" />
+		<field name="level" type="int" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="status" type="int" />
+		<field name="validatedFrom" type="Date" />
+		<field name="validatedTo" type="Date" />
+	</model>
+	<model name="vn.dtt.cmon.dm.dao.model.NAVIGATION">
+		<field name="id" type="long" />
+		<field name="name" type="String" />
+		<field name="navSub" type="String" />
+		<field name="navSubOwner" type="String" />
+		<field name="roleOwner" type="String" />
+		<field name="permissionOwner" type="String" />
+		<field name="parentId" type="long" />
+		<field name="hidden" type="long" />
+		<field name="order" type="long" />
+		<field name="thongKe" type="String" />
+	</model>
+	<model name="vn.dtt.cmon.user.dao.model.UserHuyen">
+		<field name="id" type="long" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="name" type="String" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="vn.dtt.cmon.user.dao.model.UserMapping">
+		<field name="id" type="long" />
+		<field name="name" type="String" />
+		<field name="userId" type="long" />
+		<field name="userType" type="int" />
+		<field name="orgCode1" type="String" />
+		<field name="orgCode2" type="String" />
+	</model>
+	<model name="vn.dtt.cmon.user.dao.model.UserTinh">
+		<field name="id" type="long" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="name" type="String" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="vn.dtt.cmon.user.dao.model.UserTramCap">
+		<field name="id" type="long" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="name" type="String" />
+		<field name="maTramCap" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="vn.dtt.cmon.user.dao.model.UserTU">
+		<field name="id" type="long" />
+		<field name="maTinh" type="String" />
+		<field name="name" type="String" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="vn.dtt.cmon.kiemdemvien.dao.model.KiemDemVien">
+		<field name="id" type="long" />
+		<field name="hoVaTen" type="String" />
+		<field name="taiKhoan" type="String" />
+		<field name="matKhau" type="String" />
+		<field name="capHoatDong" type="long" />
+		<field name="orgCode1" type="String" />
+		<field name="orgCode2" type="String" />
+		<field name="diaChi" type="String" />
+		<field name="chungMinhThu" type="String" />
+		<field name="dienThoai" type="String" />
+		<field name="imei" type="String" />
+		<field name="trangThai" type="long" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="long" />
+		<field name="idQuanLy" type="long" />
+		<field name="nameQuanLy" type="String" />
+	</model>
+	<model name="vn.dtt.sol.ns.baocaodli.dao.model.BaoCaoDLI">
+		<field name="id" type="long" />
+		<field name="maTinh" type="String" />
+		<field name="nam" type="int" />
+		<field name="loaiBaoCao" type="int" />
+		<field name="nguoiLap" type="String" />
+		<field name="nguoiDuyet" type="String" />
+		<field name="soBaoCao" type="String" />
+		<field name="ngayBaoCao" type="Date">
+			<hint name="show-time">false</hint>
+		</field>
+		<field name="trangThai" type="int" />
+		<field name="luuTruPDF1Id" type="long" />
+		<field name="luuTruPDF2Id" type="long" />
+		<field name="luuTruCSV1Id" type="long" />
+		<field name="luuTruCSV2Id" type="long" />
+	</model>
+	<model name="vn.dtt.sol.ns.baocaodli.dao.model.BaoCaoDLITongHop">
+		<field name="id" type="long" />
+		<field name="maTinh" type="String" />
+		<field name="nam" type="int" />
+		<field name="soDauNoiTheoKeHoach" type="int" />
+		<field name="soDauNoiMoi" type="int" />
+		<field name="soNhaTieuHVSTheoKH" type="int" />
+		<field name="soNhaTieuHVSMoi" type="int" />
+		<field name="soNguoiHuongLoiNuocSach" type="int" />
+		<field name="soXa" type="int" />
+		<field name="tiLeHGDCoNhaTieu" type="int" />
+		<field name="tiLeHGDCoNhaTieuHVS" type="int" />
+		<field name="tiLeTruongHocHVS" type="int" />
+		<field name="tiLeTramYTeHVS" type="int" />
+		<field name="soNguoiHuongLoiVSTX" type="int" />
+		<field name="keHoachPheDuyet" type="String" />
+		<field name="ngayDuyetKeHoach" type="Date" />
+		<field name="baoCaoChuongTrinh" type="String" />
+		<field name="ngayDangTai" type="Date" />
+		<field name="nguoiLap" type="String" />
+		<field name="nguoiDuyet" type="String" />
+		<field name="soBaoCao" type="String" />
+		<field name="ngayBaoCao" type="Date" />
+		<field name="trangThai" type="int" />
+		<field name="luuTruPdfTH" type="int" />
+		<field name="luuTruPdf" type="int" />
+		<field name="luuTruCsv" type="int" />
+	</model>
+	<model name="vn.dtt.sol.ns.kehoachdaunam.dao.model.KeHoachDauNam">
+		<field name="id" type="long" />
+		<field name="tramCapNuocId" type="long" />
+		<field name="nam" type="long" />
+		<field name="soDauNoiMoi" type="long" />
+		<field name="soHoHuongLoi" type="long" />
+		<field name="soNguoiHuongLoi" type="long" />
+		<field name="ghiChu" type="String" />
+		<field name="baoCaoDLI" type="long" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="long" />
+	</model>
+	<model name="vn.dtt.sol.ns.kehoachvesinh.dao.model.KeHoachVeSinh">
+		<field name="id" type="long" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="nam" type="long" />
+		<field name="soNhaTieuHVSMoi" type="long" />
+		<field name="soDan" type="long" />
+		<field name="dangKyVSTX" type="long" />
+		<field name="ghiChu" type="String" />
+		<field name="baoCaoDLI" type="long" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="long" />
+	</model>
+	<model name="vn.dtt.sol.ns.maungaunhien.dao.model.MAUKIEMDEM">
+		<field name="id" type="long" />
+		<field name="maXa" type="String" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="nam" type="int" />
+		<field name="tongSoHGD" type="int" />
+		<field name="soMauNgauNhien" type="int" />
+		<field name="soMauDuPhong" type="int" />
+		<field name="tongSoMau" type="int" />
+		<field name="soMauHVS" type="int" />
+		<field name="soMauCoNhaTieu" type="int" />
+		<field name="soMauKiemDem" type="int" />
+		<field name="ngayTao" type="Date" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="vn.dtt.sol.ns.danhgiavesinh.dao.model.DANHGIAVESINHXA">
+		<field name="id" type="long" />
+		<field name="maXa" type="String" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="nam" type="int" />
+		<field name="soDan" type="int" />
+		<field name="tiLeHGDCoNhaTieu" type="int" />
+		<field name="tiLeHGDCoNhaTieuHVS" type="int" />
+		<field name="tiLeTruongHocHVS" type="int" />
+		<field name="tiLeTramYTeHVS" type="int" />
+		<field name="ketLuanVSTX" type="int" />
+		<field name="ghiChu" type="long" />
+		<field name="baoCaoDLI" type="int" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="long" />
+	</model>
+	<model name="vn.dtt.sol.ns.vesinhmoitruong.dao.model.ChiTietKiemDemCongTrinh">
+		<field name="id" type="int" />
+		<field name="thongTinKiemDemCongTrinhId" type="int" />
+		<field name="soHoTieu" type="int" />
+		<field name="loaiNhaTieu" type="String" />
+		<field name="anhToanCanh" type="String" />
+		<field name="anhTrongNhaTieu" type="String" />
+		<field name="veSinhSachSe" type="int" />
+		<field name="deLamVeSinh" type="int" />
+		<field name="muiVeSinh" type="int" />
+		<field name="phiaTrenKinDao" type="int" />
+		<field name="duCheMuaGio" type="int" />
+		<field name="sanCaoTrenToiThieu" type="int" />
+		<field name="coCongTrinhRuaTay" type="int" />
+		<field name="chiTietCongTrinhRuaTay" type="String" />
+		<field name="anhBeChua" type="String" />
+		<field name="napBeConTot" type="int" />
+		<field name="cuaPhanBitKin" type="int" />
+		<field name="tranRaNgoai" type="int" />
+		<field name="nuocThaiDiDau" type="int" />
+		<field name="khoangCachNguonNuoc" type="int" />
+		<field name="ngapKhiMuaLon" type="int" />
+		<field name="tenCongTrinh" type="String" />
+	</model>
+	<model name="vn.dtt.sol.ns.vesinhmoitruong.dao.model.DanhGiaVeSinhXaNew">
+		<field name="id" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="nam" type="int" />
+		<field name="soDan" type="int" />
+		<field name="tongSoHGD" type="int" />
+		<field name="soHGDCoNhaTieu" type="int" />
+		<field name="soHGDCoNhaTieuHVS" type="int" />
+		<field name="soNhaTieuHVSXayMoi" type="int" />
+		<field name="tiLeHGDCoNhaTieu" type="int" />
+		<field name="tiLeHGDCoNhaTieuHVS" type="int" />
+		<field name="tongSoTruongHoc" type="int" />
+		<field name="soTruongHocHVS" type="int" />
+		<field name="tongSoTramYTe" type="int" />
+		<field name="soTramYTeHVS" type="int" />
+		<field name="tiLeTruongHocHVS" type="int" />
+		<field name="tiLeTramYTeHVS" type="int" />
+		<field name="ketLuanVSTX" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="baoCaoDLI" type="int" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="int" />
+	</model>
+	<model name="vn.dtt.sol.ns.vesinhmoitruong.dao.model.DanhGiaVeSinhXaNewFake">
+		<field name="id" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="maTinhStr" type="String" />
+		<field name="maHuyenStr" type="String" />
+		<field name="maXaStr" type="String" />
+		<field name="nam" type="int" />
+		<field name="soDan" type="int" />
+		<field name="tongSoHGD" type="int" />
+		<field name="soHGDCoNhaTieu" type="int" />
+		<field name="soHGDCoNhaTieuHVS" type="int" />
+		<field name="soNhaTieuHVSXayMoi" type="int" />
+		<field name="tiLeHGDCoNhaTieu" type="int" />
+		<field name="tiLeHGDCoNhaTieuHVS" type="int" />
+		<field name="tongSoTruongHoc" type="int" />
+		<field name="soTruongHocHVS" type="int" />
+		<field name="tongSoTramYTe" type="int" />
+		<field name="soTramYTeHVS" type="int" />
+		<field name="tiLeTruongHocHVS" type="int" />
+		<field name="tiLeTramYTeHVS" type="int" />
+		<field name="ketLuanVSTX" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="baoCaoDLI" type="int" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="int" />
+		<field name="dangKyVSTX" type="int" />
+		<field name="soNhaTieuHVSMoi" type="int" />
+	</model>
+	<model name="vn.dtt.sol.ns.vesinhmoitruong.dao.model.KeHoachKiemDemVeSinh">
+		<field name="id" type="int" />
+		<field name="nam" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="kiemDemVienID" type="int" />
+		<field name="ngayBatDau" type="Date" />
+		<field name="ngayKetThuc" type="Date" />
+		<field name="moTa" type="String" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="int" />
+		<field name="ngayXuatBan" type="Date" />
+		<field name="idNguoiXuatBan" type="int" />
+		<field name="tableId" type="String" />
+		<field name="ngayDong" type="Date" />
+		<field name="idNguoiDong" type="int" />
+		<field name="lastSavePoint" type="Date" />
+	</model>
+	<model name="vn.dtt.sol.ns.vesinhmoitruong.dao.model.keHoachVeSinhXaNew">
+		<field name="id" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="nam" type="int" />
+		<field name="soNhaTieuHVSMoi" type="int" />
+		<field name="soDan" type="int" />
+		<field name="dangKyVSTX" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="baoCaoDLI" type="int" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="int" />
+	</model>
+	<model name="vn.dtt.sol.ns.vesinhmoitruong.dao.model.ThongTinKiemDemCongTrinh">
+		<field name="id" type="int" />
+		<field name="veSinhConTrinhId" type="int" />
+		<field name="keHoachKiemDemVeSinhId" type="int" />
+		<field name="tenCongTrinh" type="String" />
+		<field name="loaiCongTrinh" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="diaChi" type="String" />
+		<field name="ngayKiemDem" type="Date" />
+		<field name="hoTenNguoiTraLoi" type="String" />
+		<field name="soDienThoai" type="String" />
+		<field name="gioiTinhNguoiTraLoi" type="String" />
+		<field name="vaiTroChucDanh" type="String" />
+		<field name="soCa" type="int" />
+		<field name="soNguoiTrongCa" type="int" />
+		<field name="kinhDo" type="String" />
+		<field name="viDo" type="String" />
+		<field name="loaiNguonNuoc" type="String" />
+		<field name="daTQCVN" type="int" />
+		<field name="datTieuChuanHVS" type="int" />
+		<field name="anhChupChungNhan" type="String" />
+		<field name="soNhaTieu" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="daKetThucDieuTra" type="int" />
+		<field name="lyDoKhongHoanThanh" type="String" />
+		<field name="imei" type="String" />
+		<field name="taiKhoan" type="String" />
+		<field name="danhGiaKiemDem" type="int" />
+		<field name="savePoint" type="Date" />
+	</model>
+	<model name="vn.dtt.sol.ns.vesinhmoitruong.dao.model.ThongTinKiemDemHoGD">
+		<field name="id" type="int" />
+		<field name="veSinhGiaDinhId" type="int" />
+		<field name="keHoachKiemDemVeSinhId" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="thonXom" type="String" />
+		<field name="tenChuHo" type="String" />
+		<field name="gioiTinhChuHo" type="int" />
+		<field name="ngayKiemDem" type="Date" />
+		<field name="timThayNha" type="int" />
+		<field name="coNguoiONha" type="int" />
+		<field name="soNguoiTrongHo" type="int" />
+		<field name="hoTenNguoiTraLoi" type="String" />
+		<field name="laChuHoKhong" type="int" />
+		<field name="gioiTinhNguoiTraLoi" type="String" />
+		<field name="tenDanToc" type="String" />
+		<field name="kinhDo" type="String" />
+		<field name="viDo" type="String" />
+		<field name="thanhPhanHoGD" type="int" />
+		<field name="chuHoDungDS" type="int" />
+		<field name="lyDoKhongDungDS" type="String" />
+		<field name="tenChuHoHienTai" type="String" />
+		<field name="gioiTinhChuHoHienTai" type="int" />
+		<field name="coNhaTieu" type="int" />
+		<field name="loaiNguonNuoc" type="String" />
+		<field name="loaiNhaTieu" type="String" />
+		<field name="anhToanCanh" type="String" />
+		<field name="anhTrongNhaTieu" type="String" />
+		<field name="thangXayDung" type="int" />
+		<field name="namXayDung" type="int" />
+		<field name="nguonVon" type="int" />
+		<field name="chiTietVonVay" type="String" />
+		<field name="duocCaiTao" type="int" />
+		<field name="loaiNhaTieuCu" type="String" />
+		<field name="anhBeChua" type="String" />
+		<field name="veSinhSachSe" type="int" />
+		<field name="deLamVeSinh" type="int" />
+		<field name="muiVeSinh" type="int" />
+		<field name="phiaTrenKinDao" type="int" />
+		<field name="duCheMuaGio" type="int" />
+		<field name="sanCaoTrenToiThieu" type="int" />
+		<field name="napBeConTot" type="int" />
+		<field name="cuaPhanBitKin" type="int" />
+		<field name="tranRaNgoai" type="int" />
+		<field name="nuocThaiDiDau" type="int" />
+		<field name="khoangCachNguonNuoc" type="int" />
+		<field name="ngapKhiMuaLon" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="daKetThucDieuTra" type="int" />
+		<field name="lyDoKhongHoanThanh" type="String" />
+		<field name="imei" type="String" />
+		<field name="taiKhoan" type="String" />
+		<field name="danhGiaKiemDem" type="int" />
+		<field name="savePoint" type="Date" />
+	</model>
+	<model name="vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhCongTrinh">
+		<field name="id" type="int" />
+		<field name="tenCongTrinh" type="String" />
+		<field name="loaiCongTrinh" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="diaChi" type="String" />
+		<field name="trangThai" type="int" />
+		<field name="namBaoCao" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="String" />
+		<field name="kinhDo" type="String" />
+		<field name="viDo" type="String" />
+		<field name="loaiNguonNuoc" type="String" />
+		<field name="nguonNuocHVS" type="int" />
+		<field name="loaiNhaTieu" type="String" />
+		<field name="nhaTieuHVS" type="int" />
+		<field name="ketLuanHVS" type="int" />
+		<field name="ngayKiemDem" type="Date" />
+		<field name="ngayDanhGia" type="Date" />
+		<field name="idNguoiDanhGia" type="int" />
+	</model>
+	<model name="vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh">
+		<field name="id" type="int" />
+		<field name="maTinh" type="String" />
+		<field name="maHuyen" type="String" />
+		<field name="maXa" type="String" />
+		<field name="thonXom" type="String" />
+		<field name="tenChuHo" type="String" />
+		<field name="gioiTinhChuHo" type="int" />
+		<field name="trangThai" type="int" />
+		<field name="mauNgauNhien" type="int" />
+		<field name="namBaoCao" type="int" />
+		<field name="ghiChu" type="String" />
+		<field name="ngayTao" type="Date" />
+		<field name="idNguoiTao" type="int" />
+		<field name="soNguoiTrongHo" type="int" />
+		<field name="thanhPhanHoGD" type="int" />
+		<field name="kinhDo" type="String" />
+		<field name="viDo" type="String" />
+		<field name="coNhaTieu" type="int" />
+		<field name="nhaTieuHVS" type="int" />
+		<field name="loaiNhaTieu" type="String" />
+		<field name="duocCaiTao" type="int" />
+		<field name="thangXayDung" type="int" />
+		<field name="namXayDung" type="int" />
+		<field name="nguonVon" type="int" />
+		<field name="ngayKiemDem" type="Date" />
+		<field name="ngayDanhGia" type="Date" />
+		<field name="idNguoiDanhGia" type="int" />
+	</model>
+</model-hints>

@@ -1,0 +1,142 @@
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<portlet:renderURL var="selectHuyen" windowState="<%= LiferayWindowState.EXCLUSIVE.toString() %>">
+	<portlet:param name="mvcPath" value="/html/portlet/danhgiavesinh/_select_huyen.jsp"/>
+</portlet:renderURL>
+<portlet:renderURL var="selectNam" windowState="<%= LiferayWindowState.EXCLUSIVE.toString() %>">
+	<portlet:param name="mvcPath" value="/html/portlet/danhgiavesinh/_select_nam.jsp"/>
+</portlet:renderURL>
+<liferay-portlet:renderURL varImpl="themDauNoiNuocURL">
+	<liferay-portlet:param name="mvcPath" value="/html/portlet/danhgiavesinh/edit_danhgiavesinh.jsp"></liferay-portlet:param>
+</liferay-portlet:renderURL>
+<aui:fieldset>
+	<aui:column>
+		<aui:select name="<%=DanhGiaVeSinhXaTerm.MA_TINH %>" id="<%=DanhGiaVeSinhXaTerm.MA_TINH %>" label="<%= LanguageUtil.get(pageContext, \"tinh-thanh-pho\") + dotLabel %>" showEmptyOption="<%= false %>" >
+			<c:if test="<%=userMapping.getUserType()!=DauNoiNuocConstantString.UserMapping.CAP_TINH %>">
+			</c:if>
+			<%
+				for (DATAITEM tinh : listTinh) {
+			%>
+				<aui:option value="<%= tinh.getNode1() %>"><%= tinh.getName() %></aui:option>
+			<%
+				}
+			%>
+		</aui:select>
+	</aui:column>
+	
+	<aui:column>
+	<div id="optHuyen">
+		<aui:select required="true" name="<%=DanhGiaVeSinhXaTerm.MA_HUYEN %>"  id="<%=DanhGiaVeSinhXaTerm.MA_HUYEN %>" onChange="javascript:selectXa();"  label="<%= LanguageUtil.get(pageContext, \"quan-huyen\") +\" \"+requiredLabel+ dotLabel %>" showEmptyOption="<%= false %>">
+						<aui:option value=""><liferay-ui:message key="-chon-"></liferay-ui:message></aui:option>
+					<%
+						for (DATAITEM huyen : listHuyen) {
+					%>
+						<aui:option value="<%= huyen.getNode2() %>"><%= huyen.getName() %></aui:option>
+					<%
+						}
+					%>
+		</aui:select>
+	</div>
+	</aui:column>
+	
+	<aui:column>
+	<div id="optNam">
+		<aui:select required="true" name="<%=DanhGiaVeSinhXaTerm.NAM %>"  id="<%=DanhGiaVeSinhXaTerm.NAM %>" label="<%= LanguageUtil.get(pageContext, \"nam-danh-gia\") +\" \"+requiredLabel+ dotLabel %>" onChange="<%= renderResponse.getNamespace() + \"themDanhGiaDefaultOnClick()\" %>" showEmptyOption="<%= false %>">
+						<aui:option value=""><liferay-ui:message key="-chon-"></liferay-ui:message></aui:option>
+					<%for(int i=2013; i<= year; i++){ %>
+						<aui:option value="<%=String.valueOf(i) %>"><liferay-ui:message key="<%=LanguageUtil.format(pageContext, \"nam-x-danh-gia\",String.valueOf(i)) %>"></liferay-ui:message></aui:option>
+						<%} %>
+		</aui:select>
+	</div>
+	</aui:column>
+</aui:fieldset>
+<script type="text/javascript">
+	//fitter list
+	function <portlet:namespace />fitterALL() {
+		var A = AUI();
+// 		imPortTuExcelURL
+		var url = '<%=searchURL.toString() %>';
+		
+		if(A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_TINH %>')) {
+			url += '&<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_TINH %>=' + A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_TINH %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_HUYEN %>')) {
+			url += '&<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_HUYEN %>=' + A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_HUYEN %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_XA %>')) {
+			url += '&<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_XA %>=' + A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_XA %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.NAM %>')) {
+			url += '&<portlet:namespace /><%=DanhGiaVeSinhXaTerm.NAM %>=' + A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.NAM %>').get('value');
+		}
+		location.href = url;
+	}
+
+	function <portlet:namespace />themDanhGiaDefaultOnClick() {
+		var A = AUI();
+// 		imPortTuExcelURL
+		var capHuyenInput = A.one("#<portlet:namespace/><%=DanhGiaVeSinhXaTerm.MA_HUYEN %>");
+		
+		if(capHuyenInput.val() > 0) {
+			var url = '<%=themDauNoiNuocURL.toString() %>';
+			if(A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_TINH %>')) {
+				url += '&<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_TINH %>=' + A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_TINH %>').get('value');
+			}
+			if(A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_HUYEN %>')) {
+				url += '&<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_HUYEN %>=' + A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.MA_HUYEN %>').get('value');
+			}
+			if(A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.NAM %>')) {
+				url += '&<portlet:namespace /><%=DanhGiaVeSinhXaTerm.NAM %>=' + A.one('#<portlet:namespace /><%=DanhGiaVeSinhXaTerm.NAM %>').get('value');
+			}
+			location.href = url;
+		}else{
+			alert("Quận/Huyện bắt buộc phải chọn!");
+		}
+	}
+	AUI().ready(function(A){
+		var capTinhInput = A.one("#<portlet:namespace/><%=DanhGiaVeSinhXaTerm.MA_TINH %>");
+		var capHuyenInput = A.one("#<portlet:namespace/><%=DanhGiaVeSinhXaTerm.MA_HUYEN %>");
+		capTinhInput.on('change', function(){
+			var capTinhId = capTinhInput.val();
+			var capHuyenId = capHuyenInput.val();
+			selectHuyen(capTinhId, capHuyenId);
+		});
+	});
+	function selectHuyen(capTinhId, capHuyenId){
+		AUI().use('aui-base','aui-io-request', function(A){
+
+			//aui ajax call to get updated content
+			A.io.request('<%= selectHuyen %>',
+			{
+				dataType: 'text/html',
+				method: 'GET',
+				data: { 
+					"<portlet:namespace />capTinhId": capTinhId,
+					"<portlet:namespace />capHuyenId": capHuyenId
+				},
+				on: {
+					success: function() {
+						var optHuyen = A.one("#optHuyen");
+						optHuyen.set("innerHTML", this.get('responseData'));
+					} 
+				}
+			});
+		});	
+	}
+
+	function selectXa(){
+		AUI().use('aui-base','aui-io-request', function(A){
+			//aui ajax call to get updated content
+			A.io.request('<%= selectNam %>',
+			{
+				dataType: 'text/html',
+				method: 'GET',
+				on: {
+					success: function() {
+						var optXa = A.one("#optNam");
+						optXa.set("innerHTML", this.get('responseData'));
+					} 
+				}
+			});
+		});	
+	}
+</script>

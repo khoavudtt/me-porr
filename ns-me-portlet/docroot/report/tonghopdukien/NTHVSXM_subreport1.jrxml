@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NTHVSXM_subreport1" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="64bb1dac-24a4-4fac-b0fd-c40e09163831">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="danSo" class="java.lang.Long">
+		<fieldDescription><![CDATA[danSo]]></fieldDescription>
+	</field>
+	<field name="dangKyVSTX" class="java.lang.String">
+		<fieldDescription><![CDATA[dangKyVSTX]]></fieldDescription>
+	</field>
+	<field name="soNhaTieuHVSDuKien" class="java.lang.Long">
+		<fieldDescription><![CDATA[soNhaTieuHVSDuKien]]></fieldDescription>
+	</field>
+	<field name="tenHuyen" class="java.lang.String">
+		<fieldDescription><![CDATA[tenHuyen]]></fieldDescription>
+	</field>
+	<field name="tenXaVaHuyen" class="java.lang.String">
+		<fieldDescription><![CDATA[tenXaVaHuyen]]></fieldDescription>
+	</field>
+	<variable name="totaldanso" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{danSo}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="20" uuid="75f236db-4799-481f-b45b-877ab1f713e4"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="50" y="0" width="215" height="20" uuid="c30091b1-c435-4954-bac5-657b59826a33"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{tenXaVaHuyen} != null && $F{tenXaVaHuyen}.trim().length() > 0) ? $F{tenXaVaHuyen} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="265" y="0" width="145" height="20" uuid="53c34c17-6c4d-457f-ab1a-b5f643e3d954"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{danSo} != null) ? $F{danSo} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="410" y="0" width="145" height="20" uuid="0ef5796f-a4ec-47c0-819d-c795b6f4c9fa"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{soNhaTieuHVSDuKien} != null ) ? $F{soNhaTieuHVSDuKien} : 0)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

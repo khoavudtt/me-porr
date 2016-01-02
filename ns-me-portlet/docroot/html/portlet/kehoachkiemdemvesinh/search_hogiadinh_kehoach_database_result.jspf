@@ -1,0 +1,33 @@
+<%@page import="vn.dtt.sol.ns.reporting.HoGiaDinhReportModel"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.HoGiaDinhBussiness"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%
+
+List<HoGiaDinhReportModel> resultBase = new ArrayList<HoGiaDinhReportModel>(
+		HoGiaDinhBussiness.getListHoGiaDinhByTypeUser(userMapping,
+				keHoachKiemDemVeSinh.getMaTinh(),
+														maHuyen,
+														maXa,
+														"",
+														"0",
+														"9999"+keHoachKiemDemVeSinh.getNam(),namBaoCaovstx,
+														"",
+														idNguoiTao,
+														advText,
+														searchContainer.getStart(), searchContainer.getEnd()));
+results = resultBase;
+total = HoGiaDinhBussiness.countHoGiaDinhByTypeUser(userMapping,
+		keHoachKiemDemVeSinh.getMaTinh(),
+		maHuyen,
+		maXa,
+		"",
+		"0",
+		"9999"+keHoachKiemDemVeSinh.getNam(),namBaoCaovstx,
+		"",
+		idNguoiTao,
+		advText,
+		searchContainer.getStart(), searchContainer.getEnd());
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

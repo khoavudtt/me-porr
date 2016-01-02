@@ -1,0 +1,288 @@
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+.button-holder {
+  margin: 0;
+  margin: 45px 0px !important; }
+
+/*-----MAIN-----*/
+.txt-area-col-2 {
+  width: 705px !important; }
+
+.lfr-input-text {
+  width: 150px !important; }
+
+.bnt-add-entry {
+  margin-bottom: 10px; }
+
+.filter-bnt {
+  margin-top: 25px; }
+
+.nav_sub {
+  border-top: 1px solid #ccc;
+  font-size: 13px;
+  margin-top: 10px; }
+
+tr th {
+  background-color: #e7e7e7;
+  text-align: center !important; }
+
+.aui a {
+  color: #000;
+  text-decoration: none; }
+
+.nt {
+  padding: 11px 45px 11px 12px;
+  width: 157px; }
+
+.nav_sub ul {
+  margin-left: 0px; }
+
+.active2 {
+  background-image: url("../images/active2.png");
+  background-repeat: repeat-y;
+  color: #075fb6;
+  font-weight: bold; }
+
+.nav_sub ul li {
+  border-bottom: 1px solid #ccc;
+  list-style: outside none none;
+  padding: 11px 0 11px 8px;
+  width: 208px; }
+
+.numnav {
+  background-color: #d9edf8;
+  border: 1px solid #a3dde9;
+  border-radius: 5px;
+  color: #3663c0;
+  float: right;
+  font-weight: bold;
+  margin: -3px 6px 0 0;
+  padding: 2px 5px;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
+  z-index: 1; }
+
+.aui .navbar {
+  margin-bottom: 0px !important; }
+
+article {
+  position: relative;
+  padding-bottom: 10px;
+  min-height: 130px; }
+
+.left {
+  width: 215px;
+  float: left;
+  border-right: 1px solid #ccc;
+  height: 100%;
+  position: absolute; }
+
+.right {
+  background-image: url(../images/bg.png);
+  background-repeat: repeat;
+  margin-left: 215px;
+  padding-bottom: 7px; }
+
+.box {
+  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
+  margin: 5px 6px 0 6px;
+  padding: 20px;
+  background-color: white;
+  min-height: 300px; }
+
+/*index*/
+.controls {
+  margin-bottom: 20px; }
+
+.select select {
+  height: 24px;
+  padding: 0 5px;
+  margin-left: 10px;
+  width: 70%; }
+
+.controls button {
+  height: 24px;
+  border: none;
+  color: white;
+  background-color: #075fb6;
+  padding: 3px 7px;
+  border-radius: 4px; }
+
+/*page2*/
+.title {
+  font-weight: bold;
+  border-bottom: 2px solid #075fb6;
+  padding-bottom: 5px;
+  margin-bottom: 20px; }
+
+.title button {
+  height: 24px;
+  border: none;
+  color: white;
+  background-color: #075fb6;
+  padding: 3px 7px;
+  border-radius: 4px;
+  float: right;
+  margin: -7px 10px 0 0; }
+
+/*info*/
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+.right {
+  background-image: url("../images/custom/bg.png");
+  background-repeat: repeat;
+  margin-left: 215px;
+  padding-bottom: 7px; }
+
+.left {
+  border-right: 1px solid #ccc;
+  float: left;
+  height: 100%;
+  position: absolute;
+  width: 215px; }
+
+.box {
+  background-color: white;
+  border: 1px solid #cccccc;
+  margin: 5px 6px 0;
+  padding: 20px; }
+
+.col-left {
+  margin-left: 15px !important;
+  width: 100%;
+  padding-top: 15px;
+  background: url("../images/bg.png"); }
+
+.lfr-nav-item {
+  text-transform: uppercase;
+  font-weight: bold; }
+
+.button-holder {
+  margin: 0px 0; }
+
+.aui form {
+  margin: 0 0 0px; }
+
+.page-content {
+  padding: 10px; }
+
+.footer1 {
+  text-align: center;
+  background-color: #075fb6;
+  color: #fff;
+  clear: both;
+  padding: 8px;
+  height: 70px; }
+
+.logo {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  margin-top: 6px;
+  margin-left: 20px; }
+
+.footer1 p {
+  line-height: 17px; }
+
+.aui body {
+  font-family: Tahoma;
+  font-size: 13px; }
+
+.weblink_tab_names span {
+  display: block;
+  float: left;
+  padding: 5px;
+  background-color: #cbcbcb;
+  margin-right: 5px;
+  font-weight: bold; }
+
+.weblink-active-tab a {
+  color: #0096F9; }
+
+#banner {
+  background: url("/nuocsach-theme/css/../images/custom/bg_header.png") 0 0 no-repeat;
+  width: 100%;
+  /* height: 100px; */
+  position: relative;
+  z-index: 1;
+  height: 60px;
+  background-position: center;
+  background-color: #075fb6; }
+
+#wrapper {
+  padding: 0; }
+
+.egov-container {
+  padding: 0 20px; }
+
+.aui ul.wd-top-menu1 {
+  list-style-type: none;
+  float: right;
+  margin: 14px 15px 0 0; }
+
+.wd-top-menu1 li {
+  float: left;
+  margin-left: 20px; }
+
+.wd-top-menu1 li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px; }
+
+.wd-top-menu1 li a:hover {
+  color: #ff8400; }
+
+.wd-top-menu1 .wd-menu1 {
+  margin-top: 5px; }
+
+.wd-top-menu1 .wd-account1 {
+  background-color: #016AAC;
+  padding: 5px; }
+
+.wd-top-menu1 .wd-account1 > a {
+  display: inline-block;
+  vertical-align: middle; }
+
+.wd-top-menu1 .wd-account1 .wd-link-avatar {
+  margin-right: 30px; }
+
+.wd-top-menu1 .wd-account1 .wd-link-avatar img {
+  padding-right: 3px; }
+
+.wd-top-menu1 .wd-account1 .wd-link-logout {
+  margin-right: 10px; }
+
+.wd-footer-container1 {
+  padding: 7px;
+  background-color: #075fb6;
+  bottom: 0;
+  width: 100%; }
+
+.wd-footer-container1 .w100 {
+  margin: auto; }
+
+.text-01 {
+  text-align: left;
+  float: left; }
+
+.text-01 span {
+  text-transform: uppercase;
+  font-weight: bold; }
+
+.text-02 {
+  float: right; }
+
+.wd-top-menu1 .wd-account-back {
+  padding: 5px; }
+
+.wd-top-menu1 .wd-account-back:hover {
+  background-color: #016aac;
+  padding: 5px;
+  text-decoration: none !important; }
+
+.wd-top-menu1 li a:hover {
+  text-decoration: none; }
+
+.box {
+  overflow: hidden; }
+

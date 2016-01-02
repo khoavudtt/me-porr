@@ -1,0 +1,242 @@
+<%@page import="vn.dtt.sol.ns.util.ActionKeys"%>
+<%@page import="vn.dtt.cmon.user.permission.UserNSPermission"%>
+<%@page import="com.liferay.portal.kernel.util.Validator"%>
+<%@page import="com.liferay.portal.service.UserLocalServiceUtil"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="vn.dtt.sol.ns.daunoinuoc.terms.DauNoiNuocTerms"%>
+<%
+	String requiredLabel="";
+	requiredLabel ="*";
+	String dotLabel=":";
+%>
+<portlet:renderURL var="selectTramCap" windowState="<%= LiferayWindowState.EXCLUSIVE.toString() %>">
+	<portlet:param name="mvcPath" value="/html/portlet/daunoinuoc/_select_tram_cap.jsp"/>
+</portlet:renderURL>
+<liferay-portlet:renderURL varImpl="themDauNoiNuocURL">
+	<liferay-portlet:param name="mvcPath" value="/html/portlet/daunoinuoc/edit_daunoi.jsp"></liferay-portlet:param>
+	<liferay-portlet:param name="<%=WebKeys.REDIRECT %>" value="<%=currentURL %>"></liferay-portlet:param>
+</liferay-portlet:renderURL>
+<liferay-portlet:renderURL varImpl="imPortTuExcelURL">
+	<liferay-portlet:param name="mvcPath" value="/html/portlet/daunoinuoc/import_daunoi.jsp"></liferay-portlet:param>
+	<liferay-portlet:param name="<%=WebKeys.REDIRECT %>" value="<%=currentURL %>"></liferay-portlet:param>
+</liferay-portlet:renderURL>
+<aui:fieldset>
+	<aui:column>
+		<aui:select name="<%=DauNoiNuocTerms.MA_TINH %>" id="<%=DauNoiNuocTerms.MA_TINH %>" label="<%= LanguageUtil.get(pageContext, \"tinh-thanh-pho\") + dotLabel %>" showEmptyOption="<%= false %>" >
+			<c:if test="<%=userMapping.getUserType()!=DauNoiNuocConstantString.UserMapping.CAP_TINH %>">
+			</c:if>
+			<%
+				for (DATAITEM tinh : listTinh) {
+			%>
+				<aui:option value="<%= tinh.getNode1() %>"><%= tinh.getName() %></aui:option>
+			<%
+				}
+			%>
+		</aui:select>
+	</aui:column>
+	<aui:column>
+		<div id="tramCapCbx">
+			<aui:select name="<%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>" id="<%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>" label="<%= LanguageUtil.get(pageContext, \"tram-cap-nuoc\") + dotLabel %>" showEmptyOption="<%= false %>">
+				<c:if test="<%=userMapping.getUserType() != DauNoiNuocConstantString.UserMapping.CAP_TRAM %>">
+				<aui:option value=""><liferay-ui:message key="-chon-tat-ca-"></liferay-ui:message></aui:option>
+				</c:if>
+				<%
+					for (TramCapNuoc tramCapNuoc : listTramCapNuoc) {
+				%>
+				<aui:option selected="<%= tramCapNuocId.contentEquals(Long.toString(tramCapNuoc.getId())) %>" value="<%= tramCapNuoc.getId() %>"><%= tramCapNuoc.getTenTram() %></aui:option>
+				<%
+					}
+				%>
+			</aui:select>
+		</div>	
+	</aui:column>
+	<aui:column>
+		<aui:select name="<%=DauNoiNuocTerms.TRANG_THAI %>"  id="<%=DauNoiNuocTerms.TRANG_THAI %>" label="<%= LanguageUtil.get(pageContext, \"thang-thai\") + dotLabel %>" showEmptyOption="<%= false %>">
+			<aui:option value=""><liferay-ui:message key="-chon-tat-ca-"></liferay-ui:message></aui:option>
+			<aui:option value="0"><liferay-ui:message key="tinh-trang-dau-noi-0"></liferay-ui:message></aui:option>
+			<aui:option value="1"><liferay-ui:message key="tinh-trang-dau-noi-1"></liferay-ui:message></aui:option>
+			<aui:option value="2"><liferay-ui:message key="tinh-trang-dau-noi-2"></liferay-ui:message></aui:option>
+			<aui:option value="3"><liferay-ui:message key="tinh-trang-dau-noi-3"></liferay-ui:message></aui:option>
+			<aui:option value="8"><liferay-ui:message key="tinh-trang-dau-noi-8"></liferay-ui:message></aui:option>
+		</aui:select>
+	</aui:column>
+	<aui:column>
+		<aui:select name="<%=DauNoiNuocTerms.NAM_BAO_CAO %>"  id="<%=DauNoiNuocTerms.NAM_BAO_CAO %>" label="<%= LanguageUtil.get(pageContext, \"nam-bao-cao\") + dotLabel %>" showEmptyOption="<%= false %>">
+			<aui:option value=""><liferay-ui:message key="-chon-tat-ca-"></liferay-ui:message></aui:option>
+			<aui:option value="0"><liferay-ui:message key="nam-bao-cao-0"></liferay-ui:message></aui:option>
+			<aui:option value="2013"><liferay-ui:message key="nam-bao-cao-2013"></liferay-ui:message></aui:option>
+			<aui:option value="2014"><liferay-ui:message key="nam-bao-cao-2014"></liferay-ui:message></aui:option>
+			<aui:option value="2015"><liferay-ui:message key="nam-bao-cao-2015"></liferay-ui:message></aui:option>
+		</aui:select>
+	</aui:column>
+	
+	<aui:column>
+		<aui:select name="idNguoiTao"  label="<%= LanguageUtil.get(pageContext, \"nguoi-tao\") + dotLabel %>" showEmptyOption="<%= false %>">
+			<aui:option value=""><liferay-ui:message key="-chon-tat-ca-"></liferay-ui:message></aui:option>
+			<%
+				User userEtt = null;
+			
+				for(int i = 0 ; i < listUserBySearch.size(); i++){
+					userEtt = UserLocalServiceUtil.fetchUser(listUserBySearch.get(i).getUserId());
+					if(Validator.isNotNull(userEtt)){
+			%>
+					<aui:option value="<%=listUserBySearch.get(i).getUserId() %>"><%=userEtt.getEmailAddress() %> - <%=listUserBySearch.get(i).getName() %></aui:option>
+			<%		}
+				} 
+			%>
+		</aui:select>
+	</aui:column>
+	<aui:column>
+		<aui:input cssClass="input1001" type="text" name="ngayNhap" label="<%= LanguageUtil.get(pageContext, \"ngay-nhap-lieu\") + dotLabel %>" ></aui:input>
+	</aui:column>
+	<aui:column>
+		<aui:input cssClass="input1001" type="text" name="advText" label="<%= LanguageUtil.get(pageContext, \"tu-khoa\") + dotLabel %>" ></aui:input>
+	</aui:column>
+	<aui:column>
+		<aui:button cssClass="btnTop" type="button" value="tim-kiem" onClick="<%= renderResponse.getNamespace() + \"fitterALL()\" %>" ></aui:button>
+	</aui:column>
+	<aui:button-row>
+			<aui:button cssClass="btn-primary" type="button" value="them-dau-noi"  onClick='<%= renderResponse.getNamespace() + "themDauNoiNuocOnClick()" %>'></aui:button>
+			<aui:button cssClass="btn-primary" type="button" value="import-tu-excel"  onClick='<%= renderResponse.getNamespace() + "imPortTuExcelClick()" %>'></aui:button>
+	</aui:button-row>
+</aui:fieldset>
+<aui:script>
+AUI().use(
+  'aui-datepicker',
+  function(A) {
+    new A.DatePicker(
+      {
+        trigger: '#<portlet:namespace />ngayNhap',
+        mask: '%m/%d/%Y',
+        popover: {
+          zIndex: 1
+        },
+        on: {
+          selectionChange: function(event) {
+            console.log(event.newSelection)
+          }
+        }
+      }
+    );
+  }
+);
+       
+    </aui:script>
+<script type="text/javascript">
+	//fitter list
+	function <portlet:namespace />fitterALL() {
+		var A = AUI();
+// 		imPortTuExcelURL
+		var url = '<%=searchURL.toString() %>';
+		
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_TINH %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.MA_TINH %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_TINH %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_HUYEN %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.MA_HUYEN %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_HUYEN %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_XA %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.MA_XA %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_XA %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRANG_THAI %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.TRANG_THAI %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRANG_THAI %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.NAM_BAO_CAO %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.NAM_BAO_CAO %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.NAM_BAO_CAO %>').get('value');
+		}
+		if(A.one('#<portlet:namespace />ngayNhap')) {
+			url += '&<portlet:namespace />ngayNhap=' + A.one('#<portlet:namespace />ngayNhap').get('value').replace(/\//g,'-');
+		}
+		if(A.one('#<portlet:namespace />idNguoiTao')) {
+			url += '&<portlet:namespace />idNguoiTao=' + A.one('#<portlet:namespace />idNguoiTao').get('value');
+		}
+		if(A.one('#<portlet:namespace />advText')) {
+			url += '&<portlet:namespace />advText=' + A.one('#<portlet:namespace />advText').get('value');
+		}
+		location.href = url;
+	}
+
+	function <portlet:namespace />themDauNoiNuocOnClick() {
+		var A = AUI();
+// 		imPortTuExcelURL
+		var url = '<%=themDauNoiNuocURL.toString() %>';
+		
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_TINH %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.MA_TINH %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_TINH %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_HUYEN %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.MA_HUYEN %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_HUYEN %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_XA %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.MA_XA %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_XA %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRANG_THAI %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.TRANG_THAI %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRANG_THAI %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.NAM_BAO_CAO %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.NAM_BAO_CAO %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.NAM_BAO_CAO %>').get('value');
+		}
+		location.href = url;
+	}
+	function <portlet:namespace />imPortTuExcelClick() {
+		var A = AUI();
+// 		
+		var url = '<%=imPortTuExcelURL.toString() %>';
+		
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_TINH %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.MA_TINH %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_TINH %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_HUYEN %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.MA_HUYEN %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_HUYEN %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_XA %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.MA_XA %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.MA_XA %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRAM_CAP_NUOC_ID %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRANG_THAI %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.TRANG_THAI %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.TRANG_THAI %>').get('value');
+		}
+		if(A.one('#<portlet:namespace /><%=DauNoiNuocTerms.NAM_BAO_CAO %>')) {
+			url += '&<portlet:namespace /><%=DauNoiNuocTerms.NAM_BAO_CAO %>=' + A.one('#<portlet:namespace /><%=DauNoiNuocTerms.NAM_BAO_CAO %>').get('value');
+		}
+		location.href = url;
+	}
+	AUI().ready(function(A){
+		var capTinhInput = A.one("#<portlet:namespace/><%=DauNoiNuocTerms.MA_TINH %>");
+		selectTram(capTinhInput.val(), '<%= tramCapNuocId %>');
+		capTinhInput.on('change', function(){
+			var capTinhId = capTinhInput.val();
+			selectTram(capTinhId, '<%= tramCapNuocId %>');
+		});
+	});
+
+	function selectTram(capTinhId, selTramCap){
+		AUI().use('aui-base','aui-io-request', function(A){
+
+			//aui ajax call to get updated content
+			A.io.request('<%= selectTramCap %>',
+			{
+				dataType: 'text/html',
+				method: 'GET',
+				data: { 
+					"<portlet:namespace />capTinhId": capTinhId,
+					"<portlet:namespace />selCapTinhId": selTramCap
+				},
+				on: {
+					success: function() {
+						var optHuyen = A.one("#tramCapCbx");
+						optHuyen.set("innerHTML", this.get('responseData'));
+					} 
+				}
+			});
+		});	
+	}
+</script>

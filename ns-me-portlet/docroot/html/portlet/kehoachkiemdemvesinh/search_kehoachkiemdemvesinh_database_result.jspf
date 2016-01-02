@@ -1,0 +1,26 @@
+<%@page import="vn.dtt.sol.ns.reporting.KeHoachKiemDemVeSinhReportModel"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.KeHoachKiemDemVeSinhBussiness"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.dao.model.KeHoachKiemDemVeSinh"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%
+
+List<KeHoachKiemDemVeSinhReportModel> resultBase = new ArrayList<KeHoachKiemDemVeSinhReportModel>(
+		KeHoachKiemDemVeSinhBussiness.getListKeHoachKiemDemVeSInhByTypeUser(userMapping, 
+																			maTinh, 
+																			maHuyen, 
+																			kiemDemVienId, 
+																			trangThai,
+																			idNguoiTao,
+																			searchContainer.getStart(), searchContainer.getEnd()));
+results = resultBase;
+total = KeHoachKiemDemVeSinhBussiness.countKeHoachKiemDemVeSInhByTypeUser(userMapping, 
+																			maTinh, 
+																			maHuyen,
+																			kiemDemVienId, 
+																			trangThai, 
+																			idNguoiTao,
+																			searchContainer.getStart(), searchContainer.getEnd());
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

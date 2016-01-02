@@ -1,0 +1,11 @@
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.dao.service.DanhGiaVeSinhXaNewFakeLocalServiceUtil"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.dao.model.DanhGiaVeSinhXaNewFake"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%
+
+results = DanhGiaVeSinhXaNewFakeLocalServiceUtil.getListDanhGiaVeSinhXaSearch(maTinh, namBaoCao, searchContainer.getStart(), searchContainer.getEnd());
+total =DanhGiaVeSinhXaNewFakeLocalServiceUtil.countListDanhGiaVeSinhXaSearch(maTinh, namBaoCao);
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

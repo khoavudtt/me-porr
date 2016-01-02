@@ -1,0 +1,20 @@
+<%@page import="com.liferay.portal.kernel.dao.orm.QueryUtil"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.KeHoachKiemDemVeSinhBussiness"%>
+<%@page import="vn.dtt.sol.ns.reporting.ThongTinKiemDemNuocModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.service.DauNoiNuocLocalServiceUtil"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="vn.dtt.sol.ns.reporting.DauNoiNuocReportModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.model.DauNoiNuoc"%>
+<%@page import="org.apache.commons.beanutils.BeanComparator"%>
+<%@page import="vn.dtt.sol.ns.tramcap.business.DauNoiNuocBusiness"%>
+<%
+// List<ThongTinKiemDemNuocModel> resultBase = new //ArrayList<ThongTinKiemDemNuocModel>(DauNoiNuocBusiness.getListThongTinKiemDemNuocModelByDauNoiId(dauNoiNuoc.getId(), searchContainer.getStart(), searchContainer.getEnd()));
+// results = resultBase;
+// total = DauNoiNuocBusiness.countListThongTinKiemDemNuocModelByDauNoiId(dauNoiNuoc.getId());
+List<ThongTinKiemDemNuocModel> resultBase = new ArrayList<ThongTinKiemDemNuocModel>(KeHoachKiemDemVeSinhBussiness.getListThongTinKiemDemCongTrinhModelById(thongTin.getVeSinhConTrinhId(), QueryUtil.ALL_POS, QueryUtil.ALL_POS));
+results = resultBase;
+total = KeHoachKiemDemVeSinhBussiness.countListThongTinKiemDemCongTrinhModelById(thongTin.getVeSinhConTrinhId());
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

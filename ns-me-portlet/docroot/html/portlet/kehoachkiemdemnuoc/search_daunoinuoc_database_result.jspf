@@ -1,0 +1,19 @@
+<%@page import="vn.dtt.sol.ns.reporting.ThongTinKiemDemNuocModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.business.KeHoachKiemDemNuocBusiness"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.service.DauNoiNuocLocalServiceUtil"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="vn.dtt.sol.ns.reporting.DauNoiNuocReportModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.model.DauNoiNuoc"%>
+<%@page import="org.apache.commons.beanutils.BeanComparator"%>
+<%@page import="vn.dtt.sol.ns.tramcap.business.DauNoiNuocBusiness"%>
+<%
+
+List<ThongTinKiemDemNuocModel> resultBase = new ArrayList<ThongTinKiemDemNuocModel>(
+		KeHoachKiemDemNuocBusiness.getListThongTinKiemDemNuocModelViewDetail(keHoachKiemDem.getId(),daKetThucDieuTra,tramCapNuoc.getMaTinh(),maHuyen,maXa,nguonDL,danhGiaKiemDem,advText,
+													searchContainer.getStart(), searchContainer.getEnd()));
+results = resultBase;
+total = KeHoachKiemDemNuocBusiness.countListThongTinKiemDemNuocModelViewDetail(keHoachKiemDem.getId(),daKetThucDieuTra,tramCapNuoc.getMaTinh(),maHuyen,maXa,nguonDL,danhGiaKiemDem,advText);
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

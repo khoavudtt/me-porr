@@ -1,0 +1,13 @@
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.dao.service.DanhGiaVeSinhXaNewFakeLocalServiceUtil"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.dao.model.DanhGiaVeSinhXaNewFake"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%
+
+if(Validator.isNotNull(namBaoCao)){
+results = DanhGiaVeSinhXaNewFakeLocalServiceUtil.getListDanhGiaVeSinhXaFakeList(maTinh, maHuyen, Integer.valueOf(namBaoCao), searchContainer.getStart(), searchContainer.getEnd());
+total =DanhGiaVeSinhXaNewFakeLocalServiceUtil.countListDanhGiaVeSinhXaFakeList(maTinh, maHuyen, Integer.valueOf(namBaoCao));
+}
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

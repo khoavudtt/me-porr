@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="thong.ke.dau.noi.kiem.dem.tai.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_daunoinuoc
+			WHERE
+				matinh = ?
+			AND me_daunoinuoc.NAMBAOCAO = 0
+		]]>
+	</sql>
+	<sql id="thong.ke.dau.noi.kiem.dem.tai.tinh.da.phan.ke.hoach">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_thongtinkiemdemnuoc
+			WHERE
+				me_thongtinkiemdemnuoc.matinh = ?
+			AND me_thongtinkiemdemnuoc.kehoachkiemdemnuocid != 0
+			AND (
+				daKetThucDieuTra = 0
+				OR daKetThucDieuTra = 1
+				OR daKetThucDieuTra = 2
+			)
+		]]>
+	</sql>
+
+	<sql id="thong.ke.dau.noi.kiem.dem.tai.tinh.da.dong.bo">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_thongtinkiemdemnuoc
+			WHERE
+				(daketthucdieutra = 1 || daketthucdieutra = 2)
+			AND matinh = ?
+		]]>
+	</sql>	
+
+
+	<sql id="thong.ke.ho.gia.dinh.kiem.dem.tai.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhgiadinh
+			WHERE
+				me_vesinhgiadinh.matinh = ?
+			AND me_vesinhgiadinh.namxaydung = ?
+		]]>
+	</sql>
+	<sql id="thong.ke.ho.gia.dinh.kiem.dem.tai.tinh.da.phan.ke.hoach">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhgiadinh
+			WHERE
+				me_vesinhgiadinh.matinh = ?
+			AND me_vesinhgiadinh.namxaydung = ?
+			AND me_vesinhgiadinh.trangthai != 0
+		]]>
+	</sql>
+	
+	<sql id="thong.ke.ho.gia.dinh.kiem.dem.tai.tinh.da.dong.bo">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_thongtinkiemdemhogd
+			WHERE
+				me_thongtinkiemdemhogd.matinh = ?
+			AND (
+				me_thongtinkiemdemhogd.daketthucdieutra = 1 || me_thongtinkiemdemhogd.daketthucdieutra = 2
+			)
+		]]>
+	</sql>	
+
+	<sql id="thong.ke.cong.trinh.kiem.dem.tai.tinh">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhcongtrinh
+			WHERE
+				maTinh = ?
+			AND me_vesinhcongtrinh.nambaocao = 0
+		]]>
+	</sql>
+	<sql id="thong.ke.cong.trinh.kiem.dem.tai.tinh.da.phan.ke.hoach">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhcongtrinh
+			WHERE
+				maTinh = ?
+			AND me_vesinhcongtrinh.trangthai != 0
+		]]>
+	</sql>
+	
+	<sql id="thong.ke.cong.trinh.kiem.dem.tai.tinh.da.dong.bo">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_thongtinkiemdemcongtrinh
+			WHERE
+				(daketthucdieutra = 1 || daketthucdieutra = 2)
+			AND matinh = ?
+		]]>
+	</sql>	
+</custom-sql>

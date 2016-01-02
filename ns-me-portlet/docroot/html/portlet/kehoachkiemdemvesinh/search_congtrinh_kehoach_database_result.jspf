@@ -1,0 +1,15 @@
+<%@page import="vn.dtt.sol.ns.reporting.CongTrinhReportModel"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.CongTrinhBussiness"%>
+<%@page import="vn.dtt.sol.ns.reporting.HoGiaDinhReportModel"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.HoGiaDinhBussiness"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%
+
+List<CongTrinhReportModel> resultBase = new ArrayList<CongTrinhReportModel>(
+		CongTrinhBussiness.getListCongTrinhByTypeUser(userMapping, keHoachKiemDemVeSinh.getMaTinh(), maHuyen, maXa, "", loaicongtrinh, "0", "9999", searchContainer.getStart(), searchContainer.getEnd()));
+results = resultBase;
+total = CongTrinhBussiness.countCongTrinhByTypeUser(userMapping, keHoachKiemDemVeSinh.getMaTinh(), maHuyen, maXa, "", loaicongtrinh, "0", "9999", searchContainer.getStart(), searchContainer.getEnd());
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

@@ -1,0 +1,23 @@
+<%@page import="vn.dtt.sol.ns.reporting.ThongTinKiemDemVeSinhCongTrinhModel"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.KeHoachKiemDemVeSinhBussiness"%>
+<%@page import="vn.dtt.sol.ns.reporting.ThongTinKiemDemVeSinhGiaDinhModel"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.dao.model.ThongTinKiemDemHoGD"%>
+<%@page import="vn.dtt.sol.ns.reporting.ThongTinKiemDemNuocModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.business.KeHoachKiemDemNuocBusiness"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.service.DauNoiNuocLocalServiceUtil"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="vn.dtt.sol.ns.reporting.DauNoiNuocReportModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.model.DauNoiNuoc"%>
+<%@page import="org.apache.commons.beanutils.BeanComparator"%>
+<%@page import="vn.dtt.sol.ns.tramcap.business.DauNoiNuocBusiness"%>
+<%
+
+List<ThongTinKiemDemVeSinhCongTrinhModel> resultBase = new ArrayList<ThongTinKiemDemVeSinhCongTrinhModel>(
+		KeHoachKiemDemVeSinhBussiness.getListThongTinKiemDemCongTrinhModelViewDetailWithThonXom(keHoachKiemDemVeSinh.getId(),daKetThucDieuTra,keHoachKiemDemVeSinh.getMaTinh(),maHuyen,maXa,danhGiaKiemDem,thonXom,
+				searchContainer.getStart(), searchContainer.getEnd()));
+results = resultBase;
+total = KeHoachKiemDemVeSinhBussiness.countListThongTinKiemDemVeSinhCongTrinhModelViewDetailWithThonXom(keHoachKiemDemVeSinh.getId(),daKetThucDieuTra,keHoachKiemDemVeSinh.getMaTinh(),maHuyen,maXa,danhGiaKiemDem,thonXom);
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

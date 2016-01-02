@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dli_22_tu" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ee10d8f-3545-4b19-8fe5-9e497a7fb4b1">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.xls.sheet.names.sheet1" value="DLI 2.2 TW"/>
+	<subDataset name="dataset1" uuid="d8ad270c-c933-42e6-8ddb-7d49f88b35ad">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="class" class="java.lang.Class">
+			<fieldDescription><![CDATA[class]]></fieldDescription>
+		</field>
+		<field name="coNhaTieu" class="java.lang.String">
+			<fieldDescription><![CDATA[coNhaTieu]]></fieldDescription>
+		</field>
+		<field name="coNhaTieuHVS" class="java.lang.String">
+			<fieldDescription><![CDATA[coNhaTieuHVS]]></fieldDescription>
+		</field>
+		<field name="huyen" class="java.lang.String">
+			<fieldDescription><![CDATA[huyen]]></fieldDescription>
+		</field>
+		<field name="soNgHuongLoiTuVSTX" class="java.lang.String">
+			<fieldDescription><![CDATA[soNgHuongLoiTuVSTX]]></fieldDescription>
+		</field>
+		<field name="tramYteCoNcSachVaNhaTieuHVS" class="java.lang.String">
+			<fieldDescription><![CDATA[tramYteCoNcSachVaNhaTieuHVS]]></fieldDescription>
+		</field>
+		<field name="truongHocCoNcSachVaNhaTieuHVS" class="java.lang.String">
+			<fieldDescription><![CDATA[truongHocCoNcSachVaNhaTieuHVS]]></fieldDescription>
+		</field>
+		<field name="xa" class="java.lang.String">
+			<fieldDescription><![CDATA[xa]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\DEV\\liferay-plugins-sdk-6.2.0\\portlets\\ns-me-portlet\\docroot\\report\\dli2_2\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="baoCaoNgayThangNam" class="java.lang.String">
+		<fieldDescription><![CDATA[baoCaoNgayThangNam]]></fieldDescription>
+	</field>
+	<field name="baoCaoSo" class="java.lang.String">
+		<fieldDescription><![CDATA[baoCaoSo]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="lstSoNgDcTiepCanVsDienVSTXDanhSach" class="java.util.List">
+		<fieldDescription><![CDATA[lstSoNgDcTiepCanVsDienVSTXDanhSach]]></fieldDescription>
+	</field>
+	<field name="nam" class="java.lang.String">
+		<fieldDescription><![CDATA[nam]]></fieldDescription>
+	</field>
+	<field name="nguoiDuyet" class="java.lang.String">
+		<fieldDescription><![CDATA[nguoiDuyet]]></fieldDescription>
+	</field>
+	<field name="nguoiLap" class="java.lang.String">
+		<fieldDescription><![CDATA[nguoiLap]]></fieldDescription>
+	</field>
+	<field name="tenTinh" class="java.lang.String">
+		<fieldDescription><![CDATA[tenTinh]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="50" uuid="8a3d366c-54f8-4d0f-893f-02ade868303c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SỐ NGƯỜI HƯỞNG LỢI TỪ \"VỆ SINH TOÀN XÃ\" (CHỈ SỐ DLI 2.2) "+(($F{nam} != null && $F{nam}.trim().length() > 0) ? "NĂM "+$F{nam} : "")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="212" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="112" width="555" height="20" uuid="3e7c107b-c37d-40ce-be23-f9bb9fa84aaf"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "dli_22_tu_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="f2a1e609-b7ff-4674-a0d6-397d5b2dc9a9"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "dli_22_tu_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>
