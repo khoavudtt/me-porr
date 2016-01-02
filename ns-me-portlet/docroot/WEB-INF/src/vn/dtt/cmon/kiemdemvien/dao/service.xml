@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="vn.dtt.cmon.kiemdemvien.dao"
+	auto-namespace-tables="false">
+	<author>HANT</author>
+	<namespace>KiemDemVien</namespace>
+
+	<entity name="KiemDemVien" table="ME_KIEMDEMVIEN" local-service="true"
+		remote-service="false" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="hoVaTen" db-name="HOVATEN" type="String" />
+		<column name="taiKhoan" db-name="TAIKHOAN" type="String" />
+		<column name="matKhau" db-name="MATKHAU" type="String" />
+		<column name="capHoatDong" db-name="CAPHOATDONG" type="long" />
+		<column name="orgCode1" db-name="ORGCODE1" type="String" />
+		<column name="orgCode2" db-name="ORGCODE2" type="String" />
+		<column name="diaChi" db-name="DIACHI" type="String" />
+		<column name="chungMinhThu" db-name="CHUNGMINHTHU" type="String" />
+		<column name="dienThoai" db-name="DIENTHOAI" type="String" />
+		<column name="imei" db-name="IMEI" type="String" />
+		<column name="trangThai" db-name="TRANGTHAI" type="long" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="idNguoiTao" db-name="IDNGUOITAO" type="long" />
+		<column name="idQuanLy" db-name="IDQUANLY" type="long" />
+		<column name="nameQuanLy" db-name="NAMEQUANLY" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="hoVaTen" />
+		</order>
+
+		<!-- Finder methods -->
+		
+		<finder name="ID" return-type="KiemDemVien">
+			<finder-column name="id" />
+		</finder>
+		
+		<finder name="HT" return-type="Collection">
+			<finder-column name="hoVaTen" />
+		</finder>
+		
+		<finder name="TK" return-type="KiemDemVien">
+			<finder-column name="taiKhoan" />
+		</finder>
+
+		<finder name="O_C_1" return-type="Collection">
+			<finder-column name="orgCode1" />
+		</finder>
+		
+		<finder name="O_C_1_O_C_2" return-type="Collection">
+			<finder-column name="orgCode1" />
+			<finder-column name="orgCode2" />
+		</finder>
+		
+		<finder name="C_H_D_O_C_2" return-type="Collection">
+			<finder-column name="capHoatDong" />
+			<finder-column name="orgCode2" />
+		</finder>
+	
+		<finder name="O_C_2" return-type="Collection">
+			<finder-column name="orgCode2" />
+		</finder>
+		
+		<finder name="T_T" return-type="Collection">
+			<finder-column name="trangThai" />
+		</finder>
+		
+		<finder name="ID_N_T" return-type="Collection">
+			<finder-column name="idNguoiTao" />
+		</finder>	
+
+		<finder name="ID_Q_L" return-type="Collection">
+			<finder-column name="idQuanLy" />
+		</finder>	
+		
+		<finder name="ORG_CHD" return-type="Collection">
+			<finder-column name="capHoatDong" />
+			<finder-column name="orgCode2" />
+		</finder>
+	</entity>
+</service-builder>

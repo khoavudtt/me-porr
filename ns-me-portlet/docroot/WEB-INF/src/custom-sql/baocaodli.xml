@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLIFinder.countByAll">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				ME_BAOCAODLI
+			WHERE
+				(ME_BAOCAODLI.MATINH = ?) AND
+				(ME_BAOCAODLI.TRANGTHAI = ?) AND
+				(ME_BAOCAODLI.NAM = ?)
+		]]>
+	</sql>
+	<sql id="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLIFinder.findByAll">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				ME_BAOCAODLI
+			WHERE
+				(ME_BAOCAODLI.MATINH = ?) AND
+				(ME_BAOCAODLI.TRANGTHAI = ?) AND
+				(ME_BAOCAODLI.NAM = ?)
+			ORDER BY
+				ME_BAOCAODLI.NAM DESC, ME_BAOCAODLI.MATINH ASC
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLIFinder.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				ME_BAOCAODLI
+			WHERE
+				(ME_BAOCAODLI.MATINH = ?) AND
+				(ME_BAOCAODLI.LOAIBAOCAO = ?) AND
+				(ME_BAOCAODLI.TRANGTHAI = ?) AND
+				(ME_BAOCAODLI.NAM = ?)
+		]]>
+	</sql>
+	<sql id="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLIFinder.find">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				ME_BAOCAODLI
+			WHERE
+				(ME_BAOCAODLI.MATINH = ?) AND
+				(ME_BAOCAODLI.LOAIBAOCAO = ?) AND
+				(ME_BAOCAODLI.TRANGTHAI = ?) AND
+				(ME_BAOCAODLI.NAM = ?)
+			ORDER BY
+				ME_BAOCAODLI.NAM DESC, ME_BAOCAODLI.MATINH ASC
+		]]>
+	</sql>
+	
+</custom-sql>

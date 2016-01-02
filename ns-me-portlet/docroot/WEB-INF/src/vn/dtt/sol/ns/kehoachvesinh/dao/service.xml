@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="vn.dtt.sol.ns.kehoachvesinh.dao" auto-namespace-tables="false">
+	<author>HANT</author>
+	<namespace>KeHoachVeSinh</namespace>
+
+	<entity name="KeHoachVeSinh" table="ME_KEHOACHVESINHXA" 
+		local-service="true" remote-service="false" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="maTinh" db-name="MATINH" type="String" />
+		<column name="maHuyen" db-name="MAHUYEN" type="String" />
+		<column name="maXa" db-name="MAXA" type="String" />
+		<column name="nam" db-name="NAM" type="long" />
+		<column name="soNhaTieuHVSMoi" db-name="SONHATIEUHVSMOI" type="long" />
+		<column name="soDan" db-name="SODAN" type="long" />
+		<column name="dangKyVSTX" db-name="DANGKYVSTX" type="long" />
+		<column name="ghiChu" db-name="GHICHU" type="String" />
+		<column name="baoCaoDLI" db-name="BAOCAODLI" type="long" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="idNguoiTao" db-name="IDNGUOITAO" type="long" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="nam" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="_ID" return-type="KeHoachVeSinh">
+			<finder-column name="id" />
+		</finder>
+		
+		<finder name="_N_T" return-type="Collection">
+			<finder-column name="idNguoiTao" />
+		</finder>
+		
+		<finder name="_Y" return-type="Collection">
+			<finder-column name="nam" />
+		</finder>
+		
+		<finder name="_D_L_I" return-type="Collection">
+			<finder-column name="baoCaoDLI" />
+		</finder>
+		
+		<finder name="_O_R_1" return-type="Collection">
+			<finder-column name="maTinh" />
+		</finder>
+		
+		<finder name="_O_R_2" return-type="Collection">
+			<finder-column name="maHuyen" />
+		</finder>
+		
+		<finder name="_X_A" return-type="Collection">
+			<finder-column name="maXa" />
+		</finder>
+		
+	</entity>
+</service-builder>

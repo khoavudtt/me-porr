@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+    <sql id="vn.dtt.cmon.user.dao.service.persistence.KiemDemVienFinder.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_kiemdemvien AS kdv
+			WHERE
+				(kdv.CAPHOATDONG = ? [$AND_OR_NULL_CHECK$]) 
+			AND (kdv.ORGCODE2 = ? [$AND_OR_NULL_CHECK$])
+		]]>
+    </sql>
+    
+    <sql id="vn.dtt.cmon.user.dao.service.persistence.KiemDemVienFinder.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kiemdemvien AS kdv
+			WHERE
+				(kdv.CAPHOATDONG = ? [$AND_OR_NULL_CHECK$]) 
+			AND (kdv.ORGCODE2 = ? [$AND_OR_NULL_CHECK$])
+		]]>
+    </sql>
+
+    <sql id="vn.dtt.cmon.kiemdemvien.dao.service.persistence.KiemDemVienFinder.finderCTHTT">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_kiemdemvien
+			WHERE
+				ORGCODE1 = ?
+			AND ORGCODE2 = ?
+			AND CAPHOATDONG = ?
+			AND TRANGTHAI = ?
+		]]>
+    </sql>
+    
+    
+    <sql id="vn.dtt.cmon.kiemdemvien.dao.service.persistence.KiemDemVienFinder.countCTHTT">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_kiemdemvien
+			WHERE
+				ORGCODE1 = ?
+			AND ORGCODE2 = ?
+			AND CAPHOATDONG = ?
+			AND TRANGTHAI = ?
+		]]>
+    </sql>
+</custom-sql>

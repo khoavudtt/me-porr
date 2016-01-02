@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.ChiTietKiemDemCongTrinhLocalService" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.impl.ChiTietKiemDemCongTrinhLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ChiTietKiemDemCongTrinhPersistence" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ChiTietKiemDemCongTrinhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.DanhGiaVeSinhXaNewLocalService" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.impl.DanhGiaVeSinhXaNewLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewPersistence" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.DanhGiaVeSinhXaNewFakeLocalService" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.impl.DanhGiaVeSinhXaNewFakeLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewFakePersistence" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewFakePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewFakeFinder" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewFakeFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.KeHoachKiemDemVeSinhLocalService" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.impl.KeHoachKiemDemVeSinhLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.KeHoachKiemDemVeSinhPersistence" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.KeHoachKiemDemVeSinhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.KeHoachKiemDemVeSinhFinder" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.KeHoachKiemDemVeSinhFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.keHoachVeSinhXaNewLocalService" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.impl.keHoachVeSinhXaNewLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.keHoachVeSinhXaNewPersistence" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.keHoachVeSinhXaNewPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.ThongTinKiemDemCongTrinhLocalService" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.impl.ThongTinKiemDemCongTrinhLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ThongTinKiemDemCongTrinhPersistence" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ThongTinKiemDemCongTrinhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ThongTinKiemDemCongTrinhFinder" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ThongTinKiemDemCongTrinhFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.ThongTinKiemDemHoGDLocalService" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.impl.ThongTinKiemDemHoGDLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ThongTinKiemDemHoGDPersistence" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ThongTinKiemDemHoGDPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ThongTinKiemDemHoGDFinder" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.ThongTinKiemDemHoGDFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.VeSinhCongTrinhLocalService" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.impl.VeSinhCongTrinhLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhCongTrinhPersistence" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhCongTrinhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhCongTrinhFinder" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhCongTrinhFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.VeSinhGiaDinhLocalService" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.impl.VeSinhGiaDinhLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhGiaDinhPersistence" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhGiaDinhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhGiaDinhFinder" class="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhGiaDinhFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.maungaunhien.dao.service.MAUKIEMDEMLocalService" class="vn.dtt.sol.ns.maungaunhien.dao.service.impl.MAUKIEMDEMLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMPersistence" class="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinder" class="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.kehoachvesinh.dao.service.KeHoachVeSinhLocalService" class="vn.dtt.sol.ns.kehoachvesinh.dao.service.impl.KeHoachVeSinhLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.kehoachvesinh.dao.service.persistence.KeHoachVeSinhPersistence" class="vn.dtt.sol.ns.kehoachvesinh.dao.service.persistence.KeHoachVeSinhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.kehoachvesinh.dao.service.persistence.KeHoachVeSinhFinder" class="vn.dtt.sol.ns.kehoachvesinh.dao.service.persistence.KeHoachVeSinhFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.kehoachdaunam.dao.service.KeHoachDauNamLocalService" class="vn.dtt.sol.ns.kehoachdaunam.dao.service.impl.KeHoachDauNamLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.kehoachdaunam.dao.service.persistence.KeHoachDauNamPersistence" class="vn.dtt.sol.ns.kehoachdaunam.dao.service.persistence.KeHoachDauNamPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.kehoachdaunam.dao.service.persistence.KeHoachDauNamFinder" class="vn.dtt.sol.ns.kehoachdaunam.dao.service.persistence.KeHoachDauNamFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.baocaodli.dao.service.BaoCaoDLILocalService" class="vn.dtt.sol.ns.baocaodli.dao.service.impl.BaoCaoDLILocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.baocaodli.dao.service.BaoCaoDLIService" class="vn.dtt.sol.ns.baocaodli.dao.service.impl.BaoCaoDLIServiceImpl" />
+	<bean id="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLIPersistence" class="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLIPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLIFinder" class="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLIFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.baocaodli.dao.service.BaoCaoDLITongHopLocalService" class="vn.dtt.sol.ns.baocaodli.dao.service.impl.BaoCaoDLITongHopLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.baocaodli.dao.service.BaoCaoDLITongHopService" class="vn.dtt.sol.ns.baocaodli.dao.service.impl.BaoCaoDLITongHopServiceImpl" />
+	<bean id="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLITongHopPersistence" class="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLITongHopPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLITongHopFinder" class="vn.dtt.sol.ns.baocaodli.dao.service.persistence.BaoCaoDLITongHopFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.UserHuyenLocalService" class="vn.dtt.cmon.user.dao.service.impl.UserHuyenLocalServiceImpl" />
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserHuyenPersistence" class="vn.dtt.cmon.user.dao.service.persistence.UserHuyenPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserHuyenFinder" class="vn.dtt.cmon.user.dao.service.persistence.UserHuyenFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.UserMappingLocalService" class="vn.dtt.cmon.user.dao.service.impl.UserMappingLocalServiceImpl" />
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserMappingPersistence" class="vn.dtt.cmon.user.dao.service.persistence.UserMappingPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserMappingFinder" class="vn.dtt.cmon.user.dao.service.persistence.UserMappingFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.UserTinhLocalService" class="vn.dtt.cmon.user.dao.service.impl.UserTinhLocalServiceImpl" />
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserTinhPersistence" class="vn.dtt.cmon.user.dao.service.persistence.UserTinhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserTinhFinder" class="vn.dtt.cmon.user.dao.service.persistence.UserTinhFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.UserTramCapLocalService" class="vn.dtt.cmon.user.dao.service.impl.UserTramCapLocalServiceImpl" />
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserTramCapPersistence" class="vn.dtt.cmon.user.dao.service.persistence.UserTramCapPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserTramCapFinder" class="vn.dtt.cmon.user.dao.service.persistence.UserTramCapFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.UserTULocalService" class="vn.dtt.cmon.user.dao.service.impl.UserTULocalServiceImpl" />
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserTUPersistence" class="vn.dtt.cmon.user.dao.service.persistence.UserTUPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.user.dao.service.persistence.UserTUFinder" class="vn.dtt.cmon.user.dao.service.persistence.UserTUFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.dm.dao.service.DATAGROUPLocalService" class="vn.dtt.cmon.dm.dao.service.impl.DATAGROUPLocalServiceImpl" />
+	<bean id="vn.dtt.cmon.dm.dao.service.DATAGROUPService" class="vn.dtt.cmon.dm.dao.service.impl.DATAGROUPServiceImpl" />
+	<bean id="vn.dtt.cmon.dm.dao.service.persistence.DATAGROUPPersistence" class="vn.dtt.cmon.dm.dao.service.persistence.DATAGROUPPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.dm.dao.service.DATAITEMLocalService" class="vn.dtt.cmon.dm.dao.service.impl.DATAITEMLocalServiceImpl" />
+	<bean id="vn.dtt.cmon.dm.dao.service.DATAITEMService" class="vn.dtt.cmon.dm.dao.service.impl.DATAITEMServiceImpl" />
+	<bean id="vn.dtt.cmon.dm.dao.service.persistence.DATAITEMPersistence" class="vn.dtt.cmon.dm.dao.service.persistence.DATAITEMPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.dm.dao.service.persistence.DATAITEMFinder" class="vn.dtt.cmon.dm.dao.service.persistence.DATAITEMFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.dm.dao.service.NAVIGATIONLocalService" class="vn.dtt.cmon.dm.dao.service.impl.NAVIGATIONLocalServiceImpl" />
+	<bean id="vn.dtt.cmon.dm.dao.service.persistence.NAVIGATIONPersistence" class="vn.dtt.cmon.dm.dao.service.persistence.NAVIGATIONPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.DanhGiaBenVungLocalService" class="vn.dtt.sol.ns.tramcap.dao.service.impl.DanhGiaBenVungLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaBenVungPersistence" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaBenVungPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaBenVungFinder" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaBenVungFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.DanhGiaVanHanhLocalService" class="vn.dtt.sol.ns.tramcap.dao.service.impl.DanhGiaVanHanhLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaVanHanhPersistence" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaVanHanhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaVanHanhFinder" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaVanHanhFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.DauNoiNuocLocalService" class="vn.dtt.sol.ns.tramcap.dao.service.impl.DauNoiNuocLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DauNoiNuocPersistence" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.DauNoiNuocPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DauNoiNuocFinder" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.DauNoiNuocFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.KeHoachKiemDemNuocLocalService" class="vn.dtt.sol.ns.tramcap.dao.service.impl.KeHoachKiemDemNuocLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.KeHoachKiemDemNuocPersistence" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.KeHoachKiemDemNuocPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.KeHoachKiemDemNuocFinder" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.KeHoachKiemDemNuocFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.KeHoachNuocSachLocalService" class="vn.dtt.sol.ns.tramcap.dao.service.impl.KeHoachNuocSachLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.KeHoachNuocSachPersistence" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.KeHoachNuocSachPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.THONGTINKIEMDEMNUOCLocalService" class="vn.dtt.sol.ns.tramcap.dao.service.impl.THONGTINKIEMDEMNUOCLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.THONGTINKIEMDEMNUOCPersistence" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.THONGTINKIEMDEMNUOCPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.THONGTINKIEMDEMNUOCFinder" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.THONGTINKIEMDEMNUOCFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.TramCapNuocLocalService" class="vn.dtt.sol.ns.tramcap.dao.service.impl.TramCapNuocLocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.TramCapNuocPersistence" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.TramCapNuocPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.tramcap.dao.service.persistence.TramCapNuocFinder" class="vn.dtt.sol.ns.tramcap.dao.service.persistence.TramCapNuocFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.kiemdemvien.dao.service.KiemDemVienLocalService" class="vn.dtt.cmon.kiemdemvien.dao.service.impl.KiemDemVienLocalServiceImpl" />
+	<bean id="vn.dtt.cmon.kiemdemvien.dao.service.persistence.KiemDemVienPersistence" class="vn.dtt.cmon.kiemdemvien.dao.service.persistence.KiemDemVienPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.cmon.kiemdemvien.dao.service.persistence.KiemDemVienFinder" class="vn.dtt.cmon.kiemdemvien.dao.service.persistence.KiemDemVienFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.danhgiavesinh.dao.service.DANHGIAVESINHXALocalService" class="vn.dtt.sol.ns.danhgiavesinh.dao.service.impl.DANHGIAVESINHXALocalServiceImpl" />
+	<bean id="vn.dtt.sol.ns.danhgiavesinh.dao.service.persistence.DANHGIAVESINHXAPersistence" class="vn.dtt.sol.ns.danhgiavesinh.dao.service.persistence.DANHGIAVESINHXAPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+	<bean id="vn.dtt.sol.ns.danhgiavesinh.dao.service.persistence.DANHGIAVESINHXAFinder" class="vn.dtt.sol.ns.danhgiavesinh.dao.service.persistence.DANHGIAVESINHXAFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="dmDataSource" />
+	</bean>
+</beans>

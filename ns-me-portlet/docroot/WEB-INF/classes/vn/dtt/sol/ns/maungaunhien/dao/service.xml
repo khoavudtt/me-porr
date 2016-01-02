@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="vn.dtt.sol.ns.maungaunhien.dao" auto-namespace-tables="false">
+	<author>khoa.vu</author>
+	<namespace>MKD</namespace>
+
+	<entity name="MAUKIEMDEM" table="ME_MAUKIEMDEM" cache-enabled="false"
+		local-service="true" remote-service="false" data-source="dmDataSource">
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="maXa" db-name="MAXA" type="String" />
+		<column name="maTinh" db-name="MATINH" type="String" />
+		<column name="maHuyen" db-name="MAHUYEN" type="String" />
+		<column name="nam" db-name="NAM" type="int" />
+		<column name="tongSoHGD" db-name="TONGSOHGD" type="int" />
+		<column name="soMauNgauNhien" db-name="SOMAUNGAUNHIEN" type="int"></column>
+		<column name="soMauDuPhong" db-name="SOMAUDUPHONG" type="int"></column>
+		<column name="tongSoMau" db-name="TONGSOMAU" type="int" />
+		<column name="soMauHVS" db-name="SOMAUHVS" type="int" />
+		<column name="soMauCoNhaTieu" db-name="SOMAUCONHATIEU" type="int" />
+		<column name="soMauKiemDem" db-name="SOMAUKIEMDEM" type="int" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="userId" db-name="IDNGUOITAO" type="long" />
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="nam" />
+		</order>
+		
+		<finder return-type="MAUKIEMDEM" name="T_H_X_N">
+			<finder-column name="maTinh"/>
+			<finder-column name="maHuyen"/>
+			<finder-column name="maXa"/>
+			<finder-column name="nam"/>
+		</finder>
+		
+		<finder return-type="Collection" name="T_">
+			<finder-column name="maTinh"/>
+		</finder>
+		
+		<finder return-type="Collection" name="H_">
+			<finder-column name="maHuyen"/>
+		</finder>
+		
+	</entity>
+</service-builder>

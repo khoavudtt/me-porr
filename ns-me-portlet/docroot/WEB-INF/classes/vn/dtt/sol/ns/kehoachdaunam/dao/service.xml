@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="vn.dtt.sol.ns.kehoachdaunam.dao" auto-namespace-tables="false">
+	<author>HANT</author>
+	<namespace>kehoachdaunam</namespace>
+
+	<entity name="KeHoachDauNam" table="ME_KEHOACHNUOCSACH" 
+		local-service="true" remote-service="false" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="tramCapNuocId" db-name="TRAMCAPNUOCID" type="long" />
+		<column name="nam" db-name="NAM" type="long" />
+		<column name="soDauNoiMoi" db-name="SODAUNOIMOI" type="long" />
+		<column name="soHoHuongLoi" db-name="SOHOHUONGLOI" type="long" />
+		<column name="soNguoiHuongLoi" db-name="SONGUOIHUONGLOI" type="long" />
+		<column name="ghiChu" db-name="GHICHU" type="String" />
+		<column name="baoCaoDLI" db-name="BAOCAODLI" type="long" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="idNguoiTao" db-name="IDNGUOITAO" type="long" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="nam" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="_ID" return-type="KeHoachDauNam">
+			<finder-column name="id" />
+		</finder>
+		
+		<finder name="_N_T" return-type="Collection">
+			<finder-column name="idNguoiTao" />
+		</finder>
+		
+		<finder name="_T_C_N" return-type="Collection">
+			<finder-column name="tramCapNuocId" />
+		</finder>
+		
+		<finder name="_Y" return-type="Collection">
+			<finder-column name="nam" />
+		</finder>
+		
+		<finder name="TramCap_Nam" return-type="Collection">
+			<finder-column name="tramCapNuocId" />
+			<finder-column name="nam" />
+		</finder>
+
+		<finder name="_D_L_I" return-type="Collection">
+			<finder-column name="baoCaoDLI" />
+		</finder>
+		
+		<finder name="_D" return-type="Collection">
+			<finder-column name="ngayTao" />
+		</finder>
+	</entity>
+</service-builder>

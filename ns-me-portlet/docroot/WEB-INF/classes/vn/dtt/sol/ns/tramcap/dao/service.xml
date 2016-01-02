@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="vn.dtt.sol.ns.tramcap.dao" auto-namespace-tables="false">
+	<author>khoa.vu</author>
+	<namespace>TRAMCAP</namespace>
+
+	<entity name="TramCapNuoc" table="ME_TRAMCAPNUOC" cache-enabled="false"
+		local-service="true" remote-service="false" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="maTram" db-name="MATRAM" type="String" />
+		<column name="tenTram" db-name="TENTRAM" type="String" />
+		<column name="maTinh" db-name="MATINH" type="String" />
+		<column name="tenTinh" db-name="TENTINH" type="String" />
+		<column name="maHuyen" db-name="MAHUYEN" type="String" />
+		<column name="tenHuyen" db-name="TENHUYEN" type="String" />
+		<column name="maXa" db-name="MAXA" type="String" />
+		<column name="tenXa" db-name="TENXA" type="String" />
+		<column name="diaChi" db-name="DIACHI" type="String" />
+		<column name="kinhDo" db-name="KINHDO" type="String" />
+		<column name="viDo" db-name="VIDO" type="String" />
+		<column name="loaiHinh" db-name="LOAIHINH" type="int" />
+		<column name="maMoHinh" db-name="LOAIMOHINH" type="String" />
+		<column name="tenMoHinh" db-name="TENMOHINH" type="String" />
+		<column name="congXuatThietKe" db-name="CONGXUATTHIETKE" type="int" />
+		<column name="tongDauNoiThietKe" db-name="TONGDAUNOITHIETKE" type="int" />
+		<column name="soNguoiCapThietKe" db-name="SONUOICAPTHIETKE" type="int" />
+		<column name="tinhTrangDuAn" db-name="TINHTRANGDUAN" type="int" />
+		<column name="tienDoXayDung" db-name="TIENDOXAYDUNG" type="int" />
+		<column name="namXayDung" db-name="NAMXAYDUNG" type="int" />
+		<column name="namHoanThanh" db-name="NAMHOANTHANH" type="int" />
+		<column name="ngayVanHanh" db-name="NGAYVANHANH" type="Date" />
+		<column name="boMayVanHanh" db-name="BOMAYVANHANH" type="int" />
+		<column name="ghiChu" db-name="CHICHU" type="String" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="idNguoiTao" db-name="IDNGUOITAO" type="long" />
+
+		<column name="idNguoiDanhGia" db-name="IDNGUOIDANHGIA" type="long" />
+		<column name="ngayDanhGia" db-name="NGAYDANHGIA" type="Date" />
+		<column name="trangThaiCapNuoc" db-name="TRANGTHAICAPNUOC" type="int" />
+		<column name="congXuatThucTe" db-name="CONGXUATTHUCTE" type="int" />
+		<column name="tongDauNoiThucTe" db-name="TONGDAUNOITHUCTE" type="int" />
+		<column name="soNguoiCapThucTe" db-name="SONGUOICAPTHUCTE" type="int" />
+		<column name="tongChiPhi" db-name="TONGCHIPHI" type="int" />
+		<column name="tongDoanhThu" db-name="TONGDOANHTTHU" type="int" />
+		<column name="nuocDatTieuChuan" db-name="NUOCDATTIEUCHUAN" type="int" />
+		<column name="nuocCoAsen" db-name="NUOCCOASEN" type="int" />
+		<column name="nuocThatThoat" db-name="NUOCTHATTHOAT" type="int" />
+		<column name="trangThaiDanhGia" db-name="TRANGTHAIDANHGIA" type="int" />
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="tenTram" />
+		</order>
+		
+		<finder return-type="Collection" name="T_">
+			<finder-column name="maTinh"/>
+		</finder>
+		<finder return-type="Collection" name="T_TENTRAM">
+			<finder-column name="tenTram"/>
+		</finder>
+		
+		<finder return-type="Collection" name="T_TENTRAM_TINH">
+			<finder-column name="tenTram"/>
+			<finder-column name="maTinh"/>
+		</finder>
+	</entity>
+	
+	<entity name="DanhGiaVanHanh" table="ME_DANHGIAVANHANH" cache-enabled="false"
+		local-service="true" remote-service="false" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="tramCapNuocId" db-name="TRAMCAPNUOCID" type="int" />
+		<column name="thang" db-name="THANG" type="int" />
+		<column name="nam" db-name="NAM" type="int" />
+		<column name="congXuatThucTe" db-name="CONGXUATTHUCTE" type="int" />
+		<column name="nuocThatThoat" db-name="NUOCTHATTHOAT" type="int" />
+		<column name="nuocDatTieuChuan" db-name="NUOCDATTIEUCHUAN" type="int" />
+		<column name="nuocCoAsen" db-name="NUOCCOASEN" type="int" />
+		<column name="trangThaiCapNuoc" db-name="TRANGTHAICAPNUOC" type="int" />
+		<column name="chiPhiHoaChat" db-name="CHIPHIHOACHAT" type="int" />
+		<column name="chiPhiDien" db-name="CHIPHIDIEN" type="int" />
+		<column name="luongNhanVien" db-name="LUONGNHANVIEN" type="int" />
+		<column name="chiPhiSuaChua" db-name="CHIPHISUACHUA" type="int" />
+		<column name="doanhThu" db-name="DOANHTHU" type="int" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="idNguoiTao" db-name="idNguoiTao" type="int" />
+		<column name="ghiChu" db-name="GHICHU" type="String" />
+		<column name="sanLuongSanXuat" db-name="SANLUONGSANXUAT" type="int"/>
+		<column name="sanLuongTieuHao" db-name="SANLUONGTIEUHAO" type="int"/>
+		<order by="desc">
+			<order-column name="nam" />
+			<order-column name="thang" />
+		</order>
+		
+		<finder return-type="Collection" name="N_">
+			<finder-column name="nam"/>
+		</finder>
+		<finder return-type="DanhGiaVanHanh" name="E_BY_T_">
+			<finder-column name="tramCapNuocId"/>
+		</finder>
+		<finder return-type="Collection" name="T_">
+			<finder-column name="tramCapNuocId"/>
+		</finder>
+		
+		<finder return-type="Collection" name="T_N">
+			<finder-column name="tramCapNuocId"/>
+			<finder-column name="nam"/>
+		</finder>
+		
+		
+		<finder return-type="DanhGiaVanHanh" name="T_T_N">
+			<finder-column name="tramCapNuocId"/>
+			<finder-column name="thang"/>
+			<finder-column name="nam"/>
+		</finder>
+		
+	</entity>
+	
+	<entity name="DanhGiaBenVung" table="ME_DANHGIABENVUNG" cache-enabled="false"
+		local-service="true" remote-service="false" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="tramCapNuocId" db-name="TRAMCAPNUOCID" type="int" />
+		<column name="nam" db-name="NAM" type="int" />
+		<column name="trangThaiCapNuoc" db-name="TRANGTHAICAPNUOC" type="int" />
+		<column name="congXuatThucTe" db-name="CONGXUATTHUCTE" type="int" />
+		<column name="tongDauNoiMoi" db-name="TONGDAUNOIMOI" type="int"/>
+		<column name="tongDauNoiThucTe" db-name="TONGDAUNOITHUCTE" type="int" />
+		<column name="soNguoiCapThucTe" db-name="SONGUOICAPTHUCTE" type="int" />
+		<column name="nuocThatThoat" db-name="NUOCTHATTHOAT" type="int" />
+		<column name="nuocDatTieuChuan" db-name="NUOCDATTIEUCHUAN" type="int" />
+		<column name="nuocCoAsen" db-name="NUOCCOASEN" type="int" />
+		<column name="tongChiPhi" db-name="TONGCHIPHI" type="int" />
+		<column name="tongDoanhThu" db-name="TONGDOANHTHU" type="int" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="idNguoiTao" db-name="idNguoiTao" type="int" />
+		<column name="ghiChu" db-name="GHICHU" type="String" />
+		<column name="ketQuaDanhGia" db-name="KETQUADANHGIA" type="int" />
+		<column name="baoCaoDLI" db-name="BAOCAODLI" type="int"/>
+		
+		<order by="desc">
+			<order-column name="ngayTao"/>
+		</order>
+		
+		<finder return-type="DanhGiaBenVung" name="N_">
+			<finder-column name="nam"/>
+			<finder-column name="tramCapNuocId"/>
+		</finder>
+		
+		<finder return-type="Collection" name="T_">
+			<finder-column name="tramCapNuocId"/>
+		</finder>
+
+	</entity>
+
+	<entity name="DauNoiNuoc" table="ME_DAUNOINUOC" cache-enabled="false" 
+		local-service="true" remote-service="false" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="tramCapNuocId" db-name="TRAMCAPNUOCID" type="int" />
+		<column name="maTinh" db-name="MATINH" type="String" />
+		<column name="maHuyen" db-name="MAHUYEN" type="String" />
+		<column name="maXa" db-name="MAXA" type="String" />
+		<column name="thonXom" db-name="THONXOM" type="String" />
+		<column name="tenChuHo" db-name="TENCHUHO" type="String" />
+		<column name="gioiTinh" db-name="GIOITINH" type="int" />
+		<column name="ngayDauNoiHopDong" db-name="NGAYDAUNOIHOPDONG" type="Date" />
+		<column name="trangThai" db-name="TRANGTHAI" type="int" />
+		<column name="namBaoCao" db-name="NAMBAOCAO" type="int" />
+		<column name="ghiChu" db-name="GHICHU" type="String" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="idNguoiTao" db-name="IDNGUOITAO" type="int" />
+		<column name="soNguoiTrongHo" db-name="SONGUOITRONGHO" type="int" />
+		<column name="thanhPhanHoGiaDinh" db-name="THANHPHANHOGIADINH" type="int" />
+		<column name="tongDoanhThu" db-name="TONGDOANHTHU" type="int" />
+		<column name="kinhDo" db-name="KINHDO" type="String" />
+		<column name="viDo" db-name="VIDO" type="String" />
+		<column name="ngayDauNoiThucTe" db-name="NGAYDAUNOITHUCTE" type="Date" />
+		<column name="soSeryDongHo" db-name="SOSERYDONGHO" type="String" />
+		<column name="danhGiaNuocHVS" db-name="DANHGIANUOCHVS" type="String" />
+		<column name="ngayKiemDem" db-name="NGAYKIEMDEM" type="Date" />
+		<column name="ngayDanhGia" db-name="NGAYDANHGIA" type="Date" />
+		<column name="idNguoiDanhGia" db-name="IDNGUOIDANHGIA" type="int" />
+		
+		<order by="asc">
+			<order-column name="maTinh"/>
+			<order-column name="maHuyen"/>
+			<order-column name="maXa"/>
+			<order-column name="thonXom"/>
+			<order-column name="tramCapNuocId"/>
+			<order-column name="tenChuHo"/>
+			<order-column name="trangThai"/>
+			<order-column name="namBaoCao"/>
+		</order>
+		
+		<finder return-type="Collection" name="T_">
+			<finder-column name="tramCapNuocId"/>
+		</finder>
+
+		<finder return-type="Collection" name="T_tramCapNuocId_idNguoiDanhGia">
+			<finder-column name="tramCapNuocId"/>
+			<finder-column name="idNguoiDanhGia"/>
+		</finder>
+		<finder return-type="Collection" name="T_CHK_Import">
+			<finder-column name="tramCapNuocId"/>
+			<finder-column name="maTinh"/>
+			<finder-column name="maHuyen"/>
+			<finder-column name="maXa"/>
+			<finder-column name="tenChuHo"/>
+			<finder-column name="idNguoiTao"/>
+		</finder>
+		<finder return-type="Collection" name="T_CHK_ADDDAUNOI">
+			<finder-column name="tramCapNuocId"/>
+			<finder-column name="maTinh"/>
+			<finder-column name="maHuyen"/>
+			<finder-column name="maXa"/>
+			<finder-column name="thonXom"/>
+			<finder-column name="tenChuHo"/>
+		</finder>
+	</entity>
+	
+	<entity name="KeHoachNuocSach" table="ME_KEHOACHNUOCSACH" cache-enabled="false"
+		local-service="true" remote-service="false" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="tramCapNuocId" db-name="TRAMCAPNUOCID" type="int" />
+		<column name="nam" db-name="NAM" type="int" />
+		<column name="soDauNoiMoi" db-name="SODAUNOIMOI" type="int" />
+		<column name="soNguoiHuongLoi" db-name="SONGUOIHUONGLOI" type="int" />
+		<column name="ghiChu" db-name="GHICHU" type="String" />
+			
+		<order by="desc">
+			<order-column name="id"/>
+		</order>
+		
+		<finder return-type="Collection" name="T_">
+			<finder-column name="tramCapNuocId"/>
+		</finder>
+
+	</entity>
+	
+	<entity name="THONGTINKIEMDEMNUOC" table="me_thongtinkiemdemnuoc" cache-enabled="false"
+		local-service="true" remote-service="false" data-source="dmDataSource">
+
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="dauNoiNuocId" db-name="daunoinuocid" type="long" />
+		<column name="keHoachKiemDemNuocId" db-name="kehoachkiemdemnuocid" type="int" />
+		<column name="maTinh" db-name="matinh" type="String" />
+		<column name="maHuyen" db-name="mahuyen" type="String" />
+		<column name="maXa" db-name="maxa" type="String" />
+		<column name="thonXom" db-name="thonxom" type="String" />
+		<column name="tenChuHo" db-name="tenchuho" type="String" />
+		<column name="gioiTinhChuHo" db-name="gioitinhchuho" type="int" />
+		<column name="ngayKiemDem" db-name="ngaykiemdem" type="Date" />
+		<column name="timThayNha" db-name="timthaynha" type="int" />
+		<column name="coNguoiONha" db-name="conguoionha" type="int" />
+		<column name="hoTenNguoiTraLoi" db-name="hotennguoitraloi" type="String" />
+		<column name="laChuHoKhong" db-name="lachuhokhong" type="int" />
+		<column name="gioiTinhNguoiTraLoi" db-name="gioitinhnguoitraloi" type="String" />
+		<column name="tenDanToc" db-name="tendantoc" type="String" />
+		<column name="kinhDo" db-name="kinhdo" type="String" />
+		<column name="viDo" db-name="vido" type="String" />
+		<column name="soNguoiTrongHo" db-name="songuoitrongho" type="int" />
+		<column name="thanhPhanHoGd" db-name="thanhphanhogd" type="int" />
+		<column name="chuHoDungDs" db-name="chuhodungds" type="int" />
+		<column name="lyDoKhongDungDs" db-name="lydokhongdungds" type="String" />
+		<column name="tenChuHoHienTai" db-name="tenchuhohientai" type="String" />
+		<column name="gioiTinhChuHoHienTai" db-name="gioitinhchuhohientai" type="int" />
+		
+		
+		<column name="dauNoiChua" db-name="daunoichua" type="int" />
+		<column name="anhDauNoi" db-name="anhdaunoi" type="String" />
+		<column name="thoiGianDauHopDong" db-name="thoigiandauhopdong" type="Date" />
+		<column name="thoiGianDauNoiThucTe" db-name="thoigiandaunoithucte" type="Date" />
+		<column name="voiNuocChayKhong" db-name="voinuocchaykhong" type="int" />
+		<column name="nuocTrongKhong" db-name="nuoctrongkhong" type="int" />
+		<column name="mauNuoc" db-name="maunuoc" type="String" />
+		<column name="muiNuoc" db-name="muinuoc" type="String" />
+		<column name="viNuoc" db-name="vinuoc" type="String" />
+		<column name="loaiKhac" db-name="loaikhac" type="String" />
+		<column name="daTungDucKhong" db-name="datungduckhong" type="int" />
+		<column name="mauNuocTungCo" db-name="maunuoctungco" type="String" />
+		<column name="muiNuocTungCo" db-name="muinuoctungco" type="String" />
+		<column name="viNuocTungCo" db-name="vinuoctungco" type="String" />
+			
+		<column name="loaiKhacTungCo" db-name="loaikhactungco" type="String" />
+		<column name="coBeChuaNuoc" db-name="cobechuanuoc" type="int" />
+		<column name="tinhTrangBe" db-name="tinhtrangbe" type="int" />
+		<column name="anhBeChua" db-name="anhbechua" type="String" />
+		<column name="biMatNuoc" db-name="bimatnuoc" type="int" />
+		<column name="soLanMatNuoc" db-name="solanmatnuoc" type="int" />
+		<column name="soGioTrungBinh" db-name="sogiotrungbinh" type="int" />
+		<column name="soSeRyDongHo" db-name="soserydongho" type="String" />
+		<column name="chiSoDongHo" db-name="chisodongho" type="String" />
+		<column name="anhDongHo" db-name="anhdongho" type="String" />
+		<column name="ghiChu" db-name="ghichu" type="String" />
+		<column name="daKetThucDieuTra" db-name="daketthucdieutra" type="int" />
+		<column name="lyDoKhongHoanThanh" db-name="lydokhonghoanthanh" type="String" />
+		<column name="iMei" db-name="imei" type="String" />
+		<column name="taiKhoan" db-name="taikhoan" type="String" />
+		<column name="danhGiaKiemDem" db-name="danhgiakiemdem" type="int" />
+			
+		<order by="desc">
+			<order-column name="id"/>
+		</order>
+		
+		<finder return-type="Collection" name="D_dauNoiNuocId">
+			<finder-column name="dauNoiNuocId"/>
+		</finder>
+		<finder return-type="Collection" name="D_keHoachKiemDemNuocId">
+			<finder-column name="keHoachKiemDemNuocId"/>
+		</finder>
+		<finder return-type="Collection" name="D_keHoachKiemDemNuocId_daKetThucDieuTra">
+			<finder-column name="keHoachKiemDemNuocId"/>
+			<finder-column name="daKetThucDieuTra"/>
+		</finder>
+		<finder return-type="Collection" name="D_keHoachKiemDemNuocId_danhGiaKiemDem">
+			<finder-column name="keHoachKiemDemNuocId"/>
+			<finder-column name="danhGiaKiemDem"/>
+		</finder>
+		
+		<finder name="_CountDauNoiByKeHoach" return-type="Collection" where=" ( daKetThucDieuTra = 0 OR daKetThucDieuTra = 1 OR daKetThucDieuTra = 2 ) ">
+			<finder-column name="keHoachKiemDemNuocId" />
+		</finder>
+	</entity>
+
+		<entity name="KeHoachKiemDemNuoc" table="ME_KEHOACHKIEMDEMNUOC" cache-enabled="false"
+ 	 local-service="true" remote-service="false" data-source="dmDataSource">
+
+	  <column name="id" db-name="ID" type="int" primary="true" />
+	  <column name="nam" db-name="NAM" type="int" />
+	  <column name="tramCapNuocId" db-name="TRAMCAPNUOCID" type="int" />
+	  <column name="kiemDemVienId" db-name="KIEMDEMVIENID" type="int" />
+	  <column name="ngayBatDau" db-name="NGAYBATDAU" type="Date" />
+	  <column name="ngayKetThuc" db-name="NGAYKETTHUC" type="Date" />
+	  <column name="moTa" db-name="MOTA" type="String" />
+	  <column name="ngayTao" db-name="NGAYTAO" type="Date" />
+	  <column name="idNguoiTao" db-name="IDNGUOITAO" type="int" />
+	  <column name="ngayXuatBan" db-name="NGAYXUATBAN" type="Date" />
+	  <column name="idNguoiXuatBan" db-name="IDNGUOIXUATBAN" type="int" />
+	  <column name="ngayDong" db-name="NGAYDONG" type="Date" />
+	  <column name="idNguoiDong" db-name="IDNGUOIDONG" type="int" />
+	  <column name="lastSavePoint" db-name="lastsavepoint" type="Date" />
+	  <order by="asc">
+	 	<order-column name="tramCapNuocId"/>
+	 	<order-column name="kiemDemVienId"/>
+	  </order>
+	</entity>
+	
+</service-builder>

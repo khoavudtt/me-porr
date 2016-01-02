@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+default-destroy-method="destroy" default-init-method="afterPropertiesSet" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <bean id="messageListener.DauNoiNuocImportThread_listener" class="vn.dtt.sol.ns.daunoinuoc.thread.DauNoiNuocImportThreadImpl" />
+   <bean id="destination.sol.ns.daunoinuoc.DauNoiNuocImportThread" class="com.liferay.portal.kernel.messaging.SerialDestination">
+      <property name="name" value="destination/sol/ns/daunoinuoc/DauNoiNuocImportThread" />
+   </bean>
+   <bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+      <property name="messageListeners">
+         <map key-type="java.lang.String" value-type="java.util.List">
+            <entry key="destination/sol/ns/daunoinuoc/DauNoiNuocImportThread">
+               <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                  <ref bean="messageListener.DauNoiNuocImportThread_listener" />
+               </list>
+            </entry>
+         </map>
+      </property>
+      <property name="destinations">
+         <list>
+            <ref bean="destination.sol.ns.daunoinuoc.DauNoiNuocImportThread" />
+         </list>
+      </property>
+   </bean>
+</beans>

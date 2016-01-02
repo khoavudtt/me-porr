@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql file="custom-sql/user.xml" />
+	<sql file="custom-sql/danhmuc.xml" />
+	<sql file="custom-sql/baocaodli.xml" />
+	<sql file="custom-sql/danhgiavanhanh.xml" />
+	<sql file="custom-sql/danhgiabenvung.xml" />
+	<sql file="custom-sql/maukiemdem.xml" />
+	<sql file="custom-sql/kiemdemvien.xml" />
+	<sql file="custom-sql/diabanquanly.xml" />
+	<sql file="custom-sql/chartstatistics.xml"/>
+	<sql file="custom-sql/menucount.xml"/>
+</custom-sql>

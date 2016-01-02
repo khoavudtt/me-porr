@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="vn.dtt.cmon.dm.dao" auto-namespace-tables="false">
+	<author>khoa.vu</author>
+	<namespace>DanhMuc</namespace>
+
+	<entity name="DATAGROUP" table="DM_DATAGROUP" 
+		local-service="true" remote-service="true" data-source="dmDataSource" >
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="code" db-name="CODE" type="String" />
+		<column name="name" db-name="NAME" type="String" />
+		<column name="description" db-name="DESCRIPTION" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+			<order-column name="id" />
+		</order>
+	</entity>
+	
+	<entity name="DATAITEM" table="DM_DATAITEM" 
+		local-service="true" remote-service="true" data-source="dmDataSource" >
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="dataGroupId" db-name="DATAGROUPID" type="long" />
+		<column name="code" db-name="CODE" type="String" />
+		<column name="node1" db-name="NODE_1" type="String" />
+		<column name="node2" db-name="NODE_2" type="String" />
+		<column name="node3" db-name="NODE_3" type="String" />
+		<column name="node4" db-name="NODE_4" type="String" />
+		<column name="level" db-name="LEVEL" type="int" />
+		<column name="name" db-name="NAME" type="String"/>
+		<column name="description" db-name="DESCRIPTION" type="String" />
+		<column name="status" db-name="STATUS" type="int" />
+		<column name="validatedFrom" db-name="VALIDATEDFROM" type="Date" />
+		<column name="validatedTo" db-name="VALIDATEDTO" type="Date" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="D_G" return-type="Collection" where="status = 1">
+			<finder-column name="dataGroupId" />
+		</finder>
+		
+		<finder name="D_G_L_1" return-type="Collection" where="status = 1 AND level = 1">
+			<finder-column name="dataGroupId" />
+		</finder>
+		
+		<finder name="D_G_L_2" return-type="Collection" where="status = 1 AND level = 2">
+			<finder-column name="dataGroupId" />
+			<finder-column name="node1" />
+		</finder>
+		
+		<finder name="D_G_L_3" return-type="Collection" where="status = 1 AND level = 3">
+			<finder-column name="dataGroupId" />
+			<finder-column name="node1" />
+			<finder-column name="node2" />
+		</finder>
+		
+		<finder name="ENTRY_NODE_1" return-type="DATAITEM" where="status = 1 AND level = 1">
+			<finder-column name="dataGroupId" />
+			<finder-column name="node1" />
+		</finder>
+	
+	
+		<finder name="ENTRY_NODE_2" return-type="DATAITEM" where="status = 1 AND level = 2">
+			<finder-column name="dataGroupId" />
+			<finder-column name="node1" />
+			<finder-column name="node2" />
+		</finder>
+	
+		<finder name="ENTRY_NODE_3" return-type="DATAITEM" where="status = 1 AND level = 3">
+			<finder-column name="dataGroupId" />
+			<finder-column name="node3" />
+		</finder>
+		
+		<finder name="ENTRY_NAME" return-type="Collection" >
+			<finder-column name="name" />
+		</finder>
+	</entity>
+	
+	<entity name="NAVIGATION" table="DM_NAVIGATION" cache-enabled="false"
+		local-service="true" remote-service="false" data-source="dmDataSource" >
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="name" db-name="NAME" type="String" />
+		<column name="navSub" db-name="NAVSUB" type="String" />
+		<column name="navSubOwner" db-name="NAVSUBOWNER" type="String" />
+		<column name="roleOwner" db-name="ROLEOWNER" type="String" />
+		<column name="permissionOwner" db-name="PERMISSIONOWNER" type="String" />
+		<column name="parentId" db-name="PARENTID" type="long" />
+		<column name="hidden" db-name="HIDDEN" type="long" />
+		<column name="order" db-name="ORDER" type="long" />
+		<column name="thongKe" db-name="THONGKE" type="String" />
+		
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="order" />
+		</order>
+		<finder name="PARENTID" return-type="Collection">
+			<finder-column name="parentId" />
+			<finder-column name="hidden" />
+		</finder>
+	</entity>
+</service-builder>

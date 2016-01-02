@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.cmon.dm.dao.service.persistence.DATAITEMFinder.getDataItem">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem as a1
+			WHERE
+				(a1.DATAGROUPID = ?)
+				AND (a1.LEVEL = ?)
+				[$ORGCODE_SELECT$]
+		]]>
+		
+	</sql>
+	
+	<sql id="vn.dtt.cmon.dm.dao.service.persistence.DATAITEMFinder.getDataItemByName">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				dm_dataitem
+			WHERE
+				DATAGROUPID = 1
+			AND LEVEL = ?
+			AND dm_dataitem.NAME = ?
+			[$ORGCODE_SELECT$]
+		]]>	
+	</sql>
+</custom-sql>

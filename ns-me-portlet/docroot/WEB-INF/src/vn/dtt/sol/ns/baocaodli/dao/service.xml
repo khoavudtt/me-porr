@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="vn.dtt.sol.ns.baocaodli.dao" auto-namespace-tables="false">
+	<author>HuyMQ</author>
+	<namespace>DanhMuc</namespace>
+
+	<entity name="BaoCaoDLI" table="ME_BAOCAODLI" local-service="true" remote-service="true" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="maTinh" db-name="MATINH" type="String" />
+		<column name="nam" db-name="NAM" type="int" />
+		<column name="loaiBaoCao" db-name="LOAIBAOCAO" type="int" />
+		<column name="nguoiLap" db-name="NGUOILAP" type="String" />
+		<column name="nguoiDuyet" db-name="NGUOIDUYET" type="String" />
+		<column name="soBaoCao" db-name="SOBAOCAO" type="String" />
+		<column name="ngayBaoCao" db-name="NGAYBAOCAO" type="Date" />
+		<column name="trangThai" db-name="TRANGTHAI" type="int" />
+		<column name="luuTruPDF1Id" db-name="LUUTRUPDF_1" type="long" />
+		<column name="luuTruPDF2Id" db-name="LUUTRUPDF_2" type="long" />
+		<column name="luuTruCSV1Id" db-name="LUUTRUCSV_1" type="long" />
+		<column name="luuTruCSV2Id" db-name="LUUTRUCSV_2" type="long" />
+
+		<!-- Order -->
+
+		<order>
+			<order-column name="nam" order-by="desc" />
+			<order-column name="maTinh" order-by="asc"/>
+			<order-column name="ngayBaoCao" order-by="desc"/>
+		</order>
+
+		<!-- Finder methods -->
+		
+		<finder name="ID" return-type="BaoCaoDLI">
+			<finder-column name="id" />
+		</finder>
+		
+		<finder name="MaTinh_Nam" return-type="BaoCaoDLI">
+			<finder-column name="maTinh" />
+			<finder-column name="nam" />
+		</finder>
+		
+		<finder name="MaTinh_Nam_LoaiBaoCao" return-type="BaoCaoDLI">
+			<finder-column name="maTinh" />
+			<finder-column name="nam" />
+			<finder-column name="loaiBaoCao" />
+		</finder>
+		
+		<finder name="Nam" return-type="Collection">
+			<finder-column name="nam" />
+		</finder>
+		
+		<finder name="MaTinh" return-type="Collection">
+			<finder-column name="maTinh" />
+		</finder>
+		
+		<finder name="TrangThai" return-type="Collection">
+			<finder-column name="trangThai" />
+		</finder>
+	</entity>
+	
+	<entity name="BaoCaoDLITongHop" table="ME_TONGHOPDLI" local-service="true" remote-service="true" data-source="dmDataSource">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="maTinh" db-name="MATINH" type="String" />
+		<column name="nam" db-name="NAM" type="int" />
+		<column name="soDauNoiTheoKeHoach" db-name="SODAUNOITHEOKEHOACH" type="int" />
+		<column name="soDauNoiMoi" db-name="SODAUNOIMOI" type="int" />
+		<column name="soNhaTieuHVSTheoKH" db-name="SONHATIEUHVSTHEOKEHOACH" type="int" />
+		<column name="soNhaTieuHVSMoi" db-name="SONNHATIEUHVSMOI" type="int" />
+		<column name="soNguoiHuongLoiNuocSach" db-name="SONGUOIHUONGLOINUOCSACH" type="int" />
+		<column name="soXa" db-name="SOXA" type="int" />
+		<column name="tiLeHGDCoNhaTieu" db-name="TILEHGDCONHATIEU" type="int" />
+		<column name="tiLeHGDCoNhaTieuHVS" db-name="TILEHGDCONHATIEUHVS" type="int" />
+		<column name="tiLeTruongHocHVS" db-name="TILETRUONGHOCHVS" type="int" />
+		<column name="tiLeTramYTeHVS" db-name="TILETRAMYTEHVS" type="int" />
+		<column name="soNguoiHuongLoiVSTX" db-name="SONGUOIHUONGLOIVSTX" type="int" />
+		<column name="keHoachPheDuyet" db-name="KEHOACHPHEDUYET" type="String" />
+		<column name="ngayDuyetKeHoach" db-name="NGAYDUYETKEHOACH" type="Date" />
+		<column name="baoCaoChuongTrinh" db-name="BAOCAOCHUONGTRINH" type="String" />
+		<column name="ngayDangTai" db-name="NGAYDANGTAI" type="Date" />
+		<column name="nguoiLap" db-name="NGUOILAP" type="String" />
+		<column name="nguoiDuyet" db-name="NGUOIDUYET" type="String" />
+		<column name="soBaoCao" db-name="SOBAOCAO" type="String" />
+		<column name="ngayBaoCao" db-name="NGAYBAOCAO" type="Date" />
+		<column name="trangThai" db-name="TRANGTHAI" type="int" />
+		<column name="luuTruPdfTH" db-name="LUUTRUPDFTH" type="int" />
+		<column name="luuTruPdf" db-name="LUUTRUPDF" type="int" />
+		<column name="luuTruCsv" db-name="LUUTRUCSV" type="int" />
+
+		<finder name="MaTinh_Nam" return-type="BaoCaoDLI">
+			<finder-column name="maTinh" />
+			<finder-column name="nam" />
+		</finder>
+
+		<finder name="Nam" return-type="Collection">
+			<finder-column name="nam" />
+		</finder>
+		<finder name="MaTinh" return-type="Collection">
+			<finder-column name="maTinh" />
+		</finder>
+	</entity>
+	
+	<exceptions>
+		<exception>NamBaoCao</exception>
+		<exception>SoBaoCao</exception>
+		<exception>NgayBaoCao</exception>
+		<exception>NguoiLap</exception>
+		<exception>NguoiDuyet</exception>
+		<exception>UpdateChotBaoCao</exception>
+		<exception>DeleteChotBaoCao</exception>
+	</exceptions>
+</service-builder>

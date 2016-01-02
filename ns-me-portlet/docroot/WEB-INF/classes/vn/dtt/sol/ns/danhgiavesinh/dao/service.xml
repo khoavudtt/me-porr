@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="vn.dtt.sol.ns.danhgiavesinh.dao" auto-namespace-tables="false">
+	<author>khoa.vu</author>
+	<namespace>DGVSX</namespace>
+
+	<entity name="DANHGIAVESINHXA" table="ME_DANHGIAVESINHXA" cache-enabled="false"
+		local-service="true" remote-service="false" data-source="dmDataSource">
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="maXa" db-name="MAXA" type="String" />
+		<column name="maTinh" db-name="MATINH" type="String" />
+		<column name="maHuyen" db-name="MAHUYEN" type="String" />
+		<column name="nam" db-name="NAM" type="int" />
+		<column name="soDan" db-name="SODAN" type="int" />
+		<column name="tiLeHGDCoNhaTieu" db-name="TILEHGDCONHATIEU" type="int" />
+		<column name="tiLeHGDCoNhaTieuHVS" db-name="TILEHGDCONHATIEUHVS" type="int" />
+		<column name="tiLeTruongHocHVS" db-name="TILETRUONGHOCHVS" type="int" />
+		<column name="tiLeTramYTeHVS" db-name="TILETRAMYTEHVS" type="int" />
+		<column name="ketLuanVSTX" db-name="KETLUANVSTX" type="int" />
+		<column name="ghiChu" db-name="GHICHU" type="long" />
+		<column name="baoCaoDLI" db-name="BAOCAODLI" type="int"/>
+		<column name="ngayTao" db-name="NGAYTAO" type="Date"/>
+		<column name="idNguoiTao" db-name="IDNGUOITAO" type="long"/>
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="nam" />
+		</order>
+	</entity>
+</service-builder>

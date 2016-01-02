@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaVanHanhFinder.countMaxThang">
+		<![CDATA[
+			SELECT
+				MAX(thang) AS COUNT_VALUE
+			FROM
+				me_danhgiavanhanh as a1
+			WHERE
+				a1.TRAMCAPNUOCID = ? AND a1.NAM = ?
+		]]>
+	</sql>
+</custom-sql>

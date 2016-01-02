@@ -1,0 +1,621 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	<portlet>
+		<portlet-name>1</portlet-name>
+		<display-name>Tram cap nuoc</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.TramCapNuocPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/tramcapnuoc/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/tramcapnuoc/</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Nuoc Sach</title>
+			<short-title>Nuoc Sach</short-title>
+			<keywords>Nuoc Sach</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	
+	<portlet>
+		<portlet-name>2</portlet-name>
+		<display-name>User Mapping</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.UserMappingPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/usermapping/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/usermapping/</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.UserMappingLanguage</resource-bundle>
+		<portlet-info>
+			<title>UserMapping</title>
+			<short-title>UserMapping</short-title>
+			<keywords>UserMapping</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>3</portlet-name>
+		<display-name>Dau noi nuoc</display-name>
+		<portlet-class>vn.dtt.sol.ns.daunoinuoc.action.DauNoiNuocAction</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/daunoinuoc/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.DauNoiNuocLanguage</resource-bundle>
+		<portlet-info>
+			<title>Dau Noi Nuoc</title>
+			<short-title>Dau Noi Nuoc</short-title>
+			<keywords>Dau Noi Nuoc</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>4</portlet-name>
+		<display-name>Nuoc Sach Navigation</display-name>
+		<portlet-class>vn.dtt.sol.ns.daunoinuoc.action.DauNoiNuocAction</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/navigation/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.NavigationLanguage</resource-bundle>
+		<portlet-info>
+			<title>Nuoc Sach Navigation</title>
+			<short-title>Nuoc Sach Navigation</short-title>
+			<keywords>Nuoc Sach Navigation</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>5</portlet-name>
+		<display-name>Kiem dem</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.KiemDemVienPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/kiemdemvien/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/kiemdemvien/</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.KiemDemVienLanguage</resource-bundle>
+		<portlet-info>
+			<title>KiemDemVien</title>
+			<short-title>KiemDemVien</short-title>
+			<keywords>KiemDemVien</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>6</portlet-name>
+		<display-name>Ke hoach kiem dem</display-name>
+		<portlet-class>vn.dtt.sol.ns.kehoachkiemdemnuoc.action.KeHoachKiemDemNuocAction</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/kehoachkiemdemnuoc/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.KeHoachKiemDemLanguage</resource-bundle>
+		<portlet-info>
+			<title>Ke Hoach Kiem Dem Nuoc</title>
+			<short-title>Ke Hoach Kiem Dem Nuoc</short-title>
+			<keywords>Ke Hoach Kiem Dem Nuoc</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	
+	<portlet>
+		<portlet-name>7</portlet-name>
+		<display-name>Danh gia ben vung</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.DanhGiaBenVungPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/danhgiabenvung/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.DanhGiaBenVung</resource-bundle>
+		<portlet-info>
+			<title>Danh gia ben vung</title>
+			<short-title>Danh gia ben vung</short-title>
+			<keywords>Danh gia ben vung</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>8</portlet-name>
+		<display-name>Ke hoach dau nam</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.KeHoachDauNam</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/kehoachdaunam/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.KeHoachDauNam</resource-bundle>
+		<portlet-info>
+			<title>Ke hoach dau nam</title>
+			<short-title>Ke hoach dau nam</short-title>
+			<keywords>Ke hoach dau nam</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>10</portlet-name>
+		<display-name>Bao Cao DLI</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.BaoCaoDLIPortlet</portlet-class>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/baocaodli/</value>
+		</init-param>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/baocaodli/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language_baocaodli</resource-bundle>
+		<portlet-info>
+			<title>Bao Cao DLI</title>
+			<short-title>Bao Cao DLI</short-title>
+			<keywords>Bao Cao DLI</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>13</portlet-name>
+		<display-name>Ve Sinh Ho Gia Dinh</display-name>
+		<portlet-class>vn.dtt.sol.ns.vesinhmoitruong.action.HoGiaDinhAction</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/vesinhhogiadinh/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.HoGiaDinhLanguage</resource-bundle>
+		<portlet-info>
+			<title>Ve Sinh Ho Gia Dinh</title>
+			<short-title>Ve Sinh Ho Gia Dinh</short-title>
+			<keywords>Ve Sinh Ho Gia Dinh</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>14</portlet-name>
+		<display-name>Ve Sinh Cong trinh</display-name>
+		<portlet-class>vn.dtt.sol.ns.vesinhmoitruong.action.CongTrinhAction</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/vesinhcongtrinh/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.CongTrinhLanguage</resource-bundle>
+		<portlet-info>
+			<title>Ve Sinh Cong trinh</title>
+			<short-title>Ve Sinh Cong trinh</short-title>
+			<keywords>Ve Sinh Cong trinh</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>15</portlet-name>
+		<display-name>Ke Hoach Kiem Dem Ve Sinh</display-name>
+		<portlet-class>vn.dtt.sol.ns.vesinhmoitruong.action.KeHoachKiemDemVeSinhAction</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/kehoachkiemdemvesinh/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.KeHoachKiemDemVeSinhLanguage</resource-bundle>
+		<portlet-info>
+			<title>Ke Hoach Kiem Dem Ve Sinh</title>
+			<short-title>Ke Hoach Kiem Dem Ve Sinh</short-title>
+			<keywords>Ke Hoach Kiem Dem Ve Sinh</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>20</portlet-name>
+		<display-name>Ke hoach ve sinh</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.KeHoachVeSinh</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/kehoachvesinh/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.KeHoachVeSinh</resource-bundle>
+		<portlet-info>
+			<title>Ke hoach ve sinh</title>
+			<short-title>Ke hoach ve sinh</short-title>
+			<keywords>Ke hoach ve sinh</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	
+	<portlet>
+		<portlet-name>25</portlet-name>
+		<display-name>Mau ngau nhien</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.MauNgauNhienPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/maungaunhien/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.MauNgauNhien</resource-bundle>
+		<portlet-info>
+			<title>Mau ngau nhien</title>
+			<short-title>Mau ngau nhien</short-title>
+			<keywords>Mau ngau nhien</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	
+	<portlet>
+		<portlet-name>26</portlet-name>
+		<display-name>Danh Gia Ve Sinh</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.DanhGiaVeSinhPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/danhgiavesinh/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.DanhGiaVeSinh</resource-bundle>
+		<portlet-info>
+			<title>Danh Gia Ve Sinh</title>
+			<short-title>Danh Gia Ve Sinh</short-title>
+			<keywords>Danh Gia Ve Sinh</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>	<portlet>
+	
+	<portlet-name>27</portlet-name>
+		<display-name>Chart</display-name>
+		<portlet-class>vn.dtt.sol.ns.portlet.ChartPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/chart/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/chart/</value>
+		</init-param>
+		<init-param>
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<init-param>
+			<name>copy-request-parameters</name>
+			<value>true</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Chart</resource-bundle>
+		<portlet-info>
+			<title>Chart Portlet</title>
+			<short-title>Chart Portlet</short-title>
+			<keywords>Chart Portlet</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	
+</portlet-app>
