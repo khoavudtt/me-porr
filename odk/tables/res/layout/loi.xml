@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_confirm"
+    android:minWidth="280dip"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/splash"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/erro" />
+
+    <TextView
+        android:id="@+id/lb_trangthai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/loitaikhoan"
+        android:textColor="@android:color/holo_red_light" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cccccc" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cccccc" />
+
+    <Button
+        android:id="@+id/bt_okuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="3dip"
+        android:background="@android:color/white"
+        android:text="@string/ok"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>

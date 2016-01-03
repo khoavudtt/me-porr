@@ -1,0 +1,13 @@
+<dataset>
+	<role id="1" code="ADM" name="admin" />
+	<role id="2" code="SUP" name="supplier" />
+	<role id="3" code="CLI" name="client" />
+	<role id="4" code="COM" name="confirmation" />
+	<user id="1"  name ="name" username="username" password="password"/>
+	<documenttype id="1" name="Kbis" clientId="1"/>
+	<documenttype id="2" name="Urssaf" clientId="1"/>
+	<documenttype id="3" name="LNTE" clientId="1"/>
+	<documenttype id="4" name="RCP" clientId="1"/>
+	<userdetail id="1" email="email" phone="phone" address="address" userId="1"/>
+	<document id="1" filepath="test.txt" document_typeId="1" supplierId="1" confirmation="1" status="1"/>
+</dataset>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="0dp"
+    android:background="@drawable/bground"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/Thongtindulieu"
+        android:textColor="#993300"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="@string/daunoinuocthongtin"
+        android:textColor="#B8704D"
+        android:textSize="16sp"
+        android:textStyle="italic|bold" />
+
+    <TextView
+        android:id="@+id/tongdaunoi_tt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="@string/thongtintongdaunoi" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/vesinhgiadinhthongtin"
+        android:textColor="#B8704D"
+        android:textSize="16sp"
+        android:textStyle="italic|bold" />
+
+    <TextView
+        android:id="@+id/tongvesinh_tt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="@string/thongtintonghogd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/congtrinhcongcongthongtin"
+        android:textColor="#B8704D"
+        android:textSize="16sp"
+        android:textStyle="italic|bold" />
+
+    <TextView
+        android:id="@+id/tongcongtrinh_tt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="@string/thongtintongcongtrinh" />
+
+    <Button
+        android:id="@+id/bt_xoadulieu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/bg_bt"
+        android:text="@string/xoadulieu"
+        android:textColor="@color/white" />
+
+</LinearLayout>

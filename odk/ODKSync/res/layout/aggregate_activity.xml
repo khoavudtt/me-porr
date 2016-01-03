@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/aggregate_activity_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/aggregate_activity_uri_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@+string/thongtin" />
+
+        <EditText
+            android:id="@+id/aggregate_activity_uri_field"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:text="@+string/default_server_url"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/aggregate_activity_account_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@+string/account"
+            android:visibility="gone" />
+
+        <Spinner
+            android:id="@+id/aggregate_activity_account_list_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/txttable"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/aggregate_activity_save_settings_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickSaveSettings"
+            android:text="@+string/save_settings"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/aggregate_activity_authorize_account_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAuthorizeAccount"
+            android:text="@+string/auth_account"
+            android:visibility="gone" />
+
+        <ToggleButton
+            android:id="@+id/aggregate_activity_sync_instance_attachments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textOff="@+string/defer_instance_files"
+            android:textOn="@+string/sync_instance_files"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/aggregate_activity_sync_now_pull_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickSyncNowPull"
+            android:text="@+string/sync_now_pull"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/aggregate_activity_progress_state_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@+string/sync_progress_state_label"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/aggregate_activity_progress_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/aggregate_activity_progress_message_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@+string/sync_progress_message_label"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/aggregate_activity_progress_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <!-- push the reset button to the bottom of the screen -->
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/aggregate_activity_sync_now_push_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClickSyncNowPush"
+                android:text="@+string/sync_now_push"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

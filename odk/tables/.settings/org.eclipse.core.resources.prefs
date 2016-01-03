@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/dtt/company/adapter/AdapterKeHoachVeSinh.java=UTF-8
+encoding//src/dtt/company/adapter/AdapterKehoachNuoc.java=UTF-8
+encoding//src/dtt/company/bean/Log.java=UTF-8
+encoding//src/dtt/company/sqlite/Sqlite.java=UTF-8
+encoding//src/org/opendatakit/tables/activities/CapNhatDuLieuActivity.java=UTF-8
+encoding//src/org/opendatakit/tables/activities/KeHoachVeSinhActivity.java=UTF-8
+encoding//src/org/opendatakit/tables/activities/Login.java=UTF-8
+encoding//src/org/opendatakit/tables/activities/TableDisplayActivity.java=UTF-8
+encoding//src/org/opendatakit/tables/activities/ThayDoiUrLActivity.java=UTF-8
+encoding//src/org/opendatakit/tables/activities/ThongTinTrungActivity.java=UTF-8
+encoding//src/org/opendatakit/tables/activities/WebViewActivity.java=UTF-8

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_confirm"
+    android:minWidth="280dip"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/scc" />
+
+    <TextView
+        android:id="@+id/lb_trangthai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/thanhcongthaydoi"
+        android:textColor="#00CC00" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cccccc" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cccccc" />
+
+    <Button
+        android:id="@+id/btok_thanhcong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="3dip"
+        android:background="@android:color/white"
+        android:text="@android:string/ok"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>

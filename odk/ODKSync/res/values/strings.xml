@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!--
+		Copyright (C) 2014 University of Washington Licensed under the Apache
+		License, Version 2.0 (the "License"); you may not use this file except
+		in compliance with the License. You may obtain a copy of the License
+		at http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License.
+	-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
+	<string name="app_name">Odk</string>
+	<string name="app_namechange">PforR Sync</string>
+	<string name="action_settings">Thiết lập</string> <!--  used in res/menu/main.xml (needed?) -->
+
+<!-- SyncActivity (aggregate_activity.xml) -->
+	<string name="server_url">Máy chủ:</string>
+	<string name="thongtin">Ứng dụng chạy ngầm không sử dụng</string>
+	<string name="default_server_url">http://opendatakit-2.appspot.com</string>
+	<string name="account">Tài khoản:</string>
+	<string name="sync_progress_state_label">Trạng thái</string>
+	<string name="sync_progress_message_label">Tiến trình</string>
+	<string name="save_settings">Lưu thiết lập</string>
+	<string name="auth_account">Xác thực tài khoản</string>
+	<string name="sync_instance_files">Đồng bộ cả file đính kèm</string>
+	<string name="defer_instance_files">Chỉ dữ liệu</string>
+	<string name="sync_now_pull">Lấy dữ liệu</string>
+	<string name="sync_now_push">gửi dữ liệu</string>
+
+<!-- Change Settings alert -->
+	<string name="ok">Đồng ý</string>
+	<string name="confirm_change_settings">Xác nhận thay đổi thiết lập</string>
+	<string name="change_settings_warning">Nếu thay đổi thiết lập, dữ liệu đã từng đồng bộ có thể không tiếp tục được không đồng bộ..</string>
+	<string name="save">Lưu</string>
+	<string name="cancel">Hủy</string>
+	
+<!-- Reset App Server alert -->
+	<string name="confirm_reset_app_server">Xác nhận Thiết lập lại Máy chủ</string>
+	<string name="reset_app_server_warning">Việc Thiết lập lại máy chủ sẽ xóa toàn bộ dữ liệu trên Máy chủ.</string>
+	<string name="reset">Thiết lập lại</string>
+
+<!-- authorization actions -->
+	<string name="choose_account">Vui lòng chọn tài khoản</string>
+	<string name="waiting_auth">Đang xác thực</string>
+
+<!-- syncProcessor details -->
+	<string name="starting_sync">Bắt đầu đồng bộ&#8230;</string>
+	<string name="retrieving_tables_list_from_server">Lấy danh sách Khảo sát trên Máy chủ.</string>
+	<string name="creating_local_table">Đang tạo %1$s&#8230;</string>
+	<string name="verifying_table_schema_on_server">Xác minh %1$s trùng khớp trên Máy chủ.</string>
+	<string name="dropping_local_table">Xóa %1$s trên Thiết bị&#8230;</string>
+	<string name="getting_app_level_manifest">Lấy danh sách Khảo sát.</string>
+	<string name="uploading_local_file">Gửi %1$s lên Máy chủ.</string>
+	<string name="deleting_file_on_server">Xóa %1$s trên Máy chủ.</string>
+	<string name="verifying_local_file">Xác minh %1$s phiên bản trùng khớp trên Máy chủ.</string>
+	<string name="deleting_local_file">Xóa %1$s trên Thiết bị.</string>
+	<string name="getting_table_manifest">Lấy danh sách %1$s tập tin từ Máy chủ.</string>
+	<string name="table_level_file_sync_complete">Hoàn thành đồng bộ %1$s tập tin cấu hình.</string>
+	<string name="getting_changed_rows_on_server">Nạp %1$s thay đổi từ Máy chủ.</string>
+	<string name="anaylzing_row_changes">Phân tích %1$s thay đổi.</string>
+	<string name="deleting_local_row">Xóa %1$s bộ dữ liệu trên thiết bị %2$d trong %3$d.</string>
+	<string name="updating_local_row">Cập nhật %1$s bộ dữ liệu trên thiết bị %2$d trong %3$d.</string>
+	<string name="inserting_local_row">Thêm %1$s bộ dữ liệu trên thiết bị %2$d trong %3$d.</string>
+	<string name="marking_conflicting_local_row">Dánh dấu xung đột %1$s bộ dữ liệu trên thiết bị %2$d trong %3$d.</string>
+	<string name="upserting_server_row">Gửi %1$s bộ dữ liệu %2$d trong %3$d tới Máy chủ.</string>
+	<string name="altering_server_row">Gửi %1$s bộ dữ liệu %2$d trong %3$d tới Máy chủ.</string>
+	<string name="deleting_server_row">Xóa %1$s bộ dữ liệu  %2$d trong %3$d trên Máy chủ.</string>
+	<string name="uploading_attachments_server_row">Gửi %1$s dữ liệu đính kèm %2$d trong %3$d tới Máy chủ.</string>
+	<string name="table_data_sync_complete">Hoàn thành đồng bộ %1$s dữ liệu với Máy chủ.</string>
+	<string name="table_data_sync_pending_attachments">Hoàn thành đồng bộ %1$s dữ liệu với Máy chủ. Không đồng bộ được tất cả tập đính kèm.</string>
+	<string name="table_data_sync_with_conflicts">Hoàn thành đồng bộ  %1$s dữ liệu với Máy chủ. Giải quyết xung đột và tiếp tục.</string>
+	<string name="table_contains_checkpoints">Phải giải quyết xung đột trước khi tiếp tục đồng bộ.</string>
+
+	<string name="sync_action_message_insert">Thêm trên Máy chủ.</string>
+	<string name="sync_table_result_success">Thành công</string>
+	<string name="sync_table_result_failure">Thất bại</string>
+	<string name="sync_table_result_exception">Ngoại lệ</string>
+
+<!-- Conflict Resolution Stuff -->
+	<string name="yes">Đồng ý</string>
+	<string name="take_local">Lấy dữ liệu từ thiết bị</string>
+	<string name="take_server">Lấy dữ liệu từ máy chủ</string>
+	<string name="mark_resolved">Đánh dấu đã sửa</string>
+	<string name="take_local_warning">Ghi đè tất cả dữ liệu trên Máy chủ bằng dữ liệu từ Thiết bị?</string>
+	<string name="take_server_warning">Ghi đè tất cả dữ liệu trên thiết bị bằng dữ liệu trên Máy chủ?</string>
+	<string name="resolve_row_warning">Ghi đè tất cả dữ liệu trên Máy chủ và Thiết bị bằng các giá trị được chọn?</string>
+	<string name="resolve_cannot_complete_message">Xung đột dữ liệu chưa được giải quyết, hãy xem lại dữ liệu</string>
+	<string name="conflict_local_was_deleted_explanation">Bạn vừa xóa dữ liệu ai đó vừa chỉnh sửa.</string>
+	<string name="conflict_server_was_deleted_explanation">Ai đó đã xóa dữ liệu bạn vừa chỉnh sửa.</string>
+	<string name="radio_button_message_restore_local_deleted">Phục hồi và sửa.</string>
+	<string name="radio_button_message_delete_local_deleted">Không lưu thay đổi, xóa trên máy chủ.</string>
+	<string name="radio_button_message_restore_server_deleted">Phục hồi và sửa.</string>
+	<string name="radio_button_message_delete_server_deleted">Xóa dữ liệu trên Thiết bị.</string>
+	<string name="conflict_delete_local_confirmation_warning">Xóa các thay đổi trên Thiết bị?</string>
+	<string name="conflict_delete_on_server_confirmation_warning">Xóa dữ liệu trên Máy chủ?</string>
+
+	<string name="checkpoint_restore_complete_or_take_newest">Khôi phục tới trạng thái Đã hoàn thành trước đó hoặc lưu như Đã hoàn thành</string>
+	<string name="checkpoint_restore_incomplete_or_take_newest">Khôi phục đến trạng thái Chưa hoàn thành tiếp theo hoặc lưu như Chưa hoàn thành</string>
+	<string name="checkpoint_remove_or_take_newest">Hủy bỏ hoặc lưu trạng thái là Chưa hoàn thành</string>
+
+	<string name="checkpoint_take_oldest_remove">Không lưu</string>
+	<string name="checkpoint_take_oldest_finalized">Khôi phục trạng thái trước đó</string>
+	<string name="checkpoint_take_oldest_incomplete">Khôi phục trạng thái trước đó</string>
+	<string name="checkpoint_take_newest">Lưu thay đổi</string>
+
+	<string name="checkpoint_delete_warning">Xóa toàn bộ?</string>
+	<string name="checkpoint_take_oldest_warning">Hủy bỏ tất cả thay đổi?</string>
+	<string name="checkpoint_take_newest_warning">lưu thay đổi và tiếp tục?</string>
+	
+	<string name="conflict_resolve_or_choose">Chọn lấy dữ liệu từ Máy chủ hay Thiết bị, hoặc lựa chọn dữ liệu riêng biệt.</string>
+	<string name="conflict_take_local_updates">Lấy dữ liệu từ Thiết bị</string>
+	<string name="conflict_take_server_updates">Lấy dữ liêu từ Máy chủ</string>
+	<string name="conflict_take_blended_updates">Hợp dữ liệu như được chỉ ra dưới đây</string>
+
+	<string name="conflict_restore_with_server_changes">Khôi phục bản ghi trên Thiết bị bằng bản ghi từ Máy chủ</string>
+	<string name="conflict_restore_with_local_changes">Khôi phục bản ghi trên Máy chủ bằng bản ghi từ Thiết bị</string>
+	<string name="conflict_enforce_local_delete">Xóa bản ghi trên máy chủ</string>
+	<string name="conflict_apply_delete_from_server">Xóa bản ghi trên Thiết bị</string>
+	
+</resources>

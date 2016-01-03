@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="@drawable/bground"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/vesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="@string/vesion"
+        android:textColor="#3D0000" />
+
+    <TextView
+        android:id="@+id/txt_tkt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/taikhoan"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/txt_tkhoan"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_selector"
+        android:hint="@string/taikhoanh"
+        android:inputType="textEmailAddress"
+        android:padding="4dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="#cccccc"
+        android:textSize="@dimen/edittext_font_size" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/txt_mkt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/matkhau"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/txt_matkhau"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_selector"
+        android:hint="@string/matkhauh"
+        android:inputType="textPassword"
+        android:padding="4dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="#cccccc"
+        android:textSize="@dimen/edittext_font_size" />
+
+    <TextView
+        android:id="@+id/txt_erro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/red" />
+
+    <CheckBox
+        android:id="@+id/checkBox_showpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/showpass" />
+
+    <Button
+        android:id="@+id/bt_dangnhap"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_bt"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/dangnhap"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

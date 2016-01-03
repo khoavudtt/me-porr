@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/timkiemten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#949494"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="30sp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/timten" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:background="#DBFF94"
+            android:bottomLeftRadius="2dp"
+            android:bottomRightRadius="2dp"
+            android:hint="@string/tentimkiem"
+            android:topLeftRadius="2dp"
+            android:topRightRadius="2dp" >
+        </AutoCompleteTextView>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_table_display_activity_one_pane_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/activity_table_display_activity_map_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include layout="@layout/map_fragment" />
+    </FrameLayout>
+
+</LinearLayout>
